@@ -1,0 +1,70 @@
+{
+  "name": "gmsoft-tools",
+  "version": "1.0.0",
+  "description": "a function library maybe u will use",
+  "main": "dist/lib",
+  "repository": "https://github.com/gmsoft-happyCoding/gmsoft-tools.git",
+  "author": "bddandelion <bddandelion729@gmail.com>",
+  "license": "MIT",
+  "module": "dist/es",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "engines": {
+    "node": ">=8",
+    "npm": ">=5"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "start": "rollup -c -w"
+  },
+  "types": "dist/types/",
+  "dependencies": {
+    "decimal.js-light": "^2.5.0"
+  },
+  "peerDependencies": {
+    "antd": "^3.15.1",
+    "lodash": "4.17.11",
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/runtime": "^7.0.0",
+    "@svgr/rollup": "^2.4.1",
+    "@types/jest": "^23.1.5",
+    "@types/react": "^16.3.13",
+    "@types/react-dom": "^16.0.5",
+    "@types/styled-components": "^4.1.12",
+    "@typescript-eslint/eslint-plugin": "^1.4.2",
+    "@typescript-eslint/parser": "^1.4.2",
+    "antd": "^3.15.1",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-eslint": "9.0.0",
+    "babel-jest": "23.6.0",
+    "babel-loader": "8.0.4",
+    "babel-plugin-lodash": "^3.3.4",
+    "babel-plugin-named-asset-import": "^0.2.3",
+    "babel-plugin-ramda": "^1.6.3",
+    "babel-plugin-styled-components": "^1.9.2",
+    "babel-preset-react-app": "^6.1.0",
+    "cross-env": "^5.1.4",
+    "gh-pages": "^1.2.0",
+    "lodash": "4.17.11",
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1",
+    "react-scripts-ts": "latest",
+    "rollup": "1.10.0",
+    "rollup-plugin-babel": "^4.3.0",
+    "rollup-plugin-commonjs": "^9.1.3",
+    "rollup-plugin-node-resolve": "^3.3.0",
+    "rollup-plugin-peer-deps-external": "^2.2.0",
+    "rollup-plugin-postcss": "^1.6.2",
+    "rollup-plugin-typescript2": "^0.20.1",
+    "rollup-plugin-url": "^1.4.0",
+    "typescript": "^3.3.3"
+  },
+  "files": [
+    "dist"
+  ]
+}
