@@ -1,9 +1,15 @@
 /**
- * pageNo 转 offset
  * pageNo转索引值
- * @param {number} pageNo [1,?] 页码
+ * @function
+ * @param {number} pageNo 页码
  * @param {number} pageSize 每页条数 可不传，默认为10
- * @return {number} offset [0,?] 索引值 默认传回 0
+ * @example
+ * pageNoToOffset(1,15)
+ * // => '0'
+ * @example
+ * pageNoToOffset(16,10)
+ * // => '150'
+ * @returns {number} - offset 索引值 默认传回 0
  */
 export default function pageNoToOffset(pageNo: number, pageSize: number = 10) {
   if (pageNo && pageNo >= 1) {

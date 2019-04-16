@@ -1,10 +1,17 @@
 import { Decimal } from 'decimal.js-light';
 
 /**
- * 大于等于
+ * 字符串数字 大于等于
+ * @function
  * @param {string} vala
  * @param {string} valb
- * @returns boolean
+ * @example
+ * gte('1.2','1.2')
+ * // => true
+ * @example
+ * gte('1.2','1.3')
+ * // => false
+ * @returns {boolean}
  */
 const gte = (vala: string, valb: string) => new Decimal(vala).gte(valb);
 

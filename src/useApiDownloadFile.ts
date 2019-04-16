@@ -3,11 +3,15 @@ import baseIsIE from './internal/baseIsIE';
 
 /**
  * 调用 后台api执行文件下载
+ * @function
  * @param  {string} path
  * @param  {string} name
  * @param  {string} [downloadGateWay=toString(process.env.REACT_APP_API_DJC_GATEWAY)]
- * 如果不传入 则项目需配置 env REACT_APP_API_DJC_GATEWAY
- * @returns void
+ * 如果不传入 则项目需配置 process.env.REACT_APP_API_DJC_GATEWAY
+ * @example
+ * useApiDownloadFile('group3/AB/12/34/123456.jpg','123456.jpg')
+ * // => void
+ * @returns {void}
  */
 export default function useApiDownloadFile(
   path: string,

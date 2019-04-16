@@ -3,6 +3,8 @@ import isNil from 'lodash/isNil';
 import isNaN from 'lodash/isNaN';
 
 /**
+ * 格式化数字或数字字符串为￥开头的货币格式
+ * @function
  * @param  {string|number} money
  * @param  {number} [float=2]
  * @example
@@ -23,7 +25,7 @@ import isNaN from 'lodash/isNaN';
  * @example
  * currency('')
  * // => undefined
- * @returns string
+ * @returns {string}
  */
 export default function currency(money: string | number, float: number = 2): string | undefined {
   if (isNil(money) || isNaN(money) || money === '') {

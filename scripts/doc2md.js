@@ -11,7 +11,7 @@ fs.readdirSync(filePath).forEach(function(filename) {
     jsdoc2md
       .getTemplateData({ files: path.resolve(filePath, filename), configure: js2mdConfig })
       .then(comments => {
-        renderDoc(comments);
+        renderDoc(filename, comments);
       })
       .catch(error => {
         console.error('renderDoc-Error', error);
@@ -19,7 +19,7 @@ fs.readdirSync(filePath).forEach(function(filename) {
   }
 });
 
-function renderDoc(comments) {
+function renderDoc(filename, comments) {
   const file = path.resolve(process.cwd(), '', 'api.md');
   const mdData = jsdoc2md.renderSync({
     data: comments,
@@ -28,5 +28,5 @@ function renderDoc(comments) {
   fs.writeFileSync(file, mdData, function(error) {
     console.error('writeFileSync-Error', error);
   });
-  console.log(`${file} 生成完毕`);
+  console.log(`${filename} 注入完毕`);
 }

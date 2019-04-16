@@ -4,6 +4,7 @@ import isNil from 'lodash/isNil';
 /**
  * 安全取值，支持默认值
  * 如果目标值为null|undefined 则返回 defaultValue 或者 undefined
+ * @function
  * @param  {any} target
  * @param  {any} paths
  * @param  {any} defaultValue?
@@ -22,7 +23,7 @@ import isNil from 'lodash/isNil';
  * @example
  * // returns 12
  * getValue({age:12},'age',null)
- * @returns any
+ * @returns {any}
  */
 export default function getValue(target: any, paths: any, defaultValue?: any) {
   if (isNil(target)) {

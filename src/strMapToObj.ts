@@ -1,8 +1,11 @@
 /**
  * @description Map 转 Object
- * @author GM20171202
+ * @function
  * @param {Map<string, any>} strMap - key string 的 Map
- * @returns object
+ * @example
+ * strMapToObj(new Map([['name', '张三'],['title', 'Author']]))
+ * // => {name:'张三',title:'Author'}
+ * @returns {object}
  */
 export default function strMapToObj(strMap: Map<string, any>) {
   let obj = Object.create(null);
