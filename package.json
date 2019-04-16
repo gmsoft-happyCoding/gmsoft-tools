@@ -1,12 +1,12 @@
 {
   "name": "gmsoft-tools",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "a function library maybe u will use",
-  "main": "dist/lib",
+  "main": "lib",
   "repository": "https://github.com/gmsoft-happyCoding/gmsoft-tools.git",
   "author": "bddandelion <bddandelion729@gmail.com>",
   "license": "MIT",
-  "module": "dist/es",
+  "module": "es",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
@@ -15,16 +15,19 @@
     "npm": ">=5"
   },
   "scripts": {
-    "build": "rollup -c",
-    "start": "rollup -c -w"
+    "clear": "rimraf ./es && rimraf ./lib && rimraf ./api.md",
+    "build": "yarn clear && rollup -c",
+    "build:md": "node scripts/doc2md.js",
+    "start": "yarn clear && rollup -c -w"
   },
-  "types": "dist/types/",
   "dependencies": {
-    "decimal.js-light": "^2.5.0"
+    "decimal.js-light": "^2.5.0",
+    "ua-parser-js": "^0.7.19"
   },
   "peerDependencies": {
     "antd": "^3.15.1",
-    "lodash": "4.17.11",
+    "lodash": "^4.17.11",
+    "moment": "^2.22.2",
     "react": "^16.8.0",
     "react-dom": "^16.8.0"
   },
@@ -33,6 +36,7 @@
     "@babel/runtime": "^7.0.0",
     "@svgr/rollup": "^2.4.1",
     "@types/jest": "^23.1.5",
+    "@types/lodash": "^4.14.123",
     "@types/react": "^16.3.13",
     "@types/react-dom": "^16.0.5",
     "@types/styled-components": "^4.1.12",
@@ -49,8 +53,13 @@
     "babel-plugin-styled-components": "^1.9.2",
     "babel-preset-react-app": "^6.1.0",
     "cross-env": "^5.1.4",
+    "fs-extra": "^7.0.0",
+    "jsdoc-babel": "^0.5.0",
+    "jsdoc-to-markdown": "^4.0.1",
+    "rimraf": "^2.6.2",
     "gh-pages": "^1.2.0",
-    "lodash": "4.17.11",
+    "lodash": "^4.17.11",
+    "moment": "^2.22.2",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
     "react-scripts-ts": "latest",
@@ -65,6 +74,7 @@
     "typescript": "^3.3.3"
   },
   "files": [
-    "dist"
+    "es",
+    "lib"
   ]
 }

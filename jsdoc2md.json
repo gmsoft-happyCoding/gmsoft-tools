@@ -1,0 +1,8 @@
+{
+  "source": {
+    "include": ["es"],
+    "includePattern": ".+\\.js(x)?$",
+    "excludePattern": ".+\\.d.ts"
+  },
+  "plugins": ["plugins/markdown"]
+}
