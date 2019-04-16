@@ -15,9 +15,9 @@
     "npm": ">=5"
   },
   "scripts": {
-    "clear": "rimraf ./es && rimraf ./lib && rimraf ./api.md",
+    "clear": "rimraf ./es && rimraf ./lib",
     "build": "yarn clear && rollup -c",
-    "build:md": "node scripts/doc2md.js",
+    "build:md": "rimraf ./api.md && node scripts/doc2md.js",
     "start": "yarn clear && rollup -c -w"
   },
   "dependencies": {
