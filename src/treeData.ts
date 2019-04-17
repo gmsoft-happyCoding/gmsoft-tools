@@ -3,7 +3,7 @@
  * @Author: GM20171202
  * @Date: 2018-05-10 09:41:02
  * @Last Modified by: GM20171202
- * @Last Modified time: 2019-04-16 16:56:37
+ * @Last Modified time: 2019-04-17 11:22:16
  */
 import isArray from 'lodash/isArray';
 import isNil from 'lodash/isNil';
@@ -27,20 +27,20 @@ class TreeData {
   /**
    * @description 构造器
    * 当节点属性isLeaf 为true时，子节点集值为null
-   * @param {any[]} [metaArr=[]] - 传入的一维数组
-   * @param {string} [uidKey='upId'] - 表示上级节点的 key
-   * @param {string} [childArrKey='children'] - 表示子节点数组的 key
-   * @param {string} [itemKey='id'] - 表示节点的主键的 key
-   * @param {string} [treeItemKey='key'] - 表示树节点的主键的 key
-   * @param {string} [pathStart=''] - path起始值
+   * @param {any[]|undefined} [metaArr=[]] - 传入的一维数组
+   * @param {string|undefined} [uidKey='upId'] - 表示上级节点的 key
+   * @param {string|undefined} [childArrKey='children'] - 表示子节点数组的 key
+   * @param {string|undefined} [itemKey='id'] - 表示节点的主键的 key
+   * @param {string|undefined} [treeItemKey='key'] - 表示树节点的主键的 key
+   * @param {string|undefined} [pathStart=''] - path起始值
    */
   constructor(
-    metaArr: any[] = [],
-    uidKey: string = 'upId',
-    childArrKey: string = 'children',
-    itemKey: string = 'id',
-    treeItemKey: string = 'key',
-    pathStart: string = ''
+    metaArr: any[] | undefined = [],
+    uidKey: string | undefined = 'upId',
+    childArrKey: string | undefined = 'children',
+    itemKey: string | undefined = 'id',
+    treeItemKey: string | undefined = 'key',
+    pathStart: string | undefined = ''
   ) {
     // 传入的一维数组
     this.metaArr = metaArr;
