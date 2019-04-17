@@ -27,6 +27,14 @@ import createFormFields from './createFormFields';
 import onValidateFieldsChange from './onValidateFieldsChange';
 import getPopupContainer from './getPopupContainer';
 import isOnlyFormFieldChange from './isOnlyFormFieldChange';
+import isIE from './isIE';
+import boolStrToBool from './boolStrToBool';
+import boolToBoolStr from './boolToBoolStr';
+import parseJSON from './parseJSON';
+import biteToKBite from './biteToKBite';
+import boolNumToBool from './boolNumToBool';
+import boolToBoolNum from './boolToBoolNum';
+import boolToBoolWords from './boolToBoolWords';
 
 export {
   getValue,
@@ -58,4 +66,12 @@ export {
   onValidateFieldsChange,
   getPopupContainer,
   isOnlyFormFieldChange,
+  isIE,
+  boolStrToBool,
+  boolToBoolStr,
+  parseJSON,
+  biteToKBite,
+  boolNumToBool,
+  boolToBoolNum,
+  boolToBoolWords,
 };

@@ -1,5 +1,6 @@
 # gmsoft-tools - gmsoft公用方法集
 [![NPM](https://img.shields.io/npm/v/gmsoft-tools.svg)](https://www.npmjs.com/package/gmsoft-tools)
+[![DOWNLOAD](https://img.shields.io/npm/dt/gmsoft-tools.svg)](https://www.npmjs.com/package/gmsoft-tools)
 ## install
 
 ```

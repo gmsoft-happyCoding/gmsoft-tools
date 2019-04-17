@@ -10,6 +10,18 @@
 <dl>
 <dt><a href="#add">add(augend, addend)</a> ⇒ <code>string</code></dt>
 <dd><p>加法</p></dd>
+<dt><a href="#biteToKBite">biteToKBite(bite)</a> ⇒ <code>number</code></dt>
+<dd><p>字节转千字节 bite -&gt; Kb</p></dd>
+<dt><a href="#boolNumToBool">boolNumToBool(boolNum)</a> ⇒ <code>boolean</code></dt>
+<dd><p>0|1 转boolean</p></dd>
+<dt><a href="#boolStrToBool">boolStrToBool(boolStr)</a> ⇒ <code>boolean</code></dt>
+<dd><p>布尔型字符串 转为布尔值 &#39;boolean&#39; -&gt; boolean</p></dd>
+<dt><a href="#boolToBoolNum">boolToBoolNum(bool)</a> ⇒ <code>BoolNum</code></dt>
+<dd><p>boolean 转 0 | 1</p></dd>
+<dt><a href="#boolToBoolStr">boolToBoolStr(bool)</a> ⇒ <code>BoolStr</code></dt>
+<dd><p>布尔值转布尔型字符串 boolean -&gt; &#39;boolean&#39;</p></dd>
+<dt><a href="#boolToBoolWords">boolToBoolWords(bool)</a> ⇒ <code>string</code></dt>
+<dd><p>bool值 转 文字(是|否)</p></dd>
 <dt><a href="#compared">compared(vala, valb)</a> ⇒ <code>number</code></dt>
 <dd><p>判定大小</p></dd>
 <dt><a href="#createFormFields">createFormFields(formFields, [createFormFieldCLI])</a> ⇒ <code>StringObject</code></dt>
@@ -57,6 +69,8 @@
 常用于 Form.create() onFieldsChange 时</p></dd>
 <dt><a href="#pageNoToOffset">pageNoToOffset(pageNo, pageSize)</a> ⇒ <code>number</code></dt>
 <dd><p>pageNo转索引值</p></dd>
+<dt><a href="#parseJSON">parseJSON(json, defaultValue?)</a> ⇒ <code>any</code></dt>
+<dd><p>安全解析JSON</p></dd>
 <dt><a href="#parseJSONArr">parseJSONArr(jsonArr, [defaultValue])</a> ⇒ <code>Array.&lt;any&gt;</code></dt>
 <dd><p>安全解析 JSON数组
 如果解析结果不是数组则视为无效，返回defaultValue||[]</p></dd>
@@ -100,6 +114,133 @@ new TreeData([]).init()// => {treeData:[],treeMap:Map}
 **Example**  
 ```js
 add('1.1','1.8')// => '2.9'
+```
+<a name="biteToKBite"></a>
+
+## biteToKBite(bite) ⇒ <code>number</code>
+<p>字节转千字节 bite -&gt; Kb</p>
+
+**Kind**: global function  
+**Returns**: <code>number</code> - <p>KB</p>  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| bite | <code>number</code> | <p>待转单位的字节数</p> |
+
+<a name="boolNumToBool"></a>
+
+## boolNumToBool(boolNum) ⇒ <code>boolean</code>
+<p>0|1 转boolean</p>
+
+**Kind**: global function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| boolNum | <code>BoolNum</code> | <p>0|1</p> |
+
+**Example**  
+```js
+boolNumToBool(1)// => true
+```
+**Example**  
+```js
+boolNumToBool(0)// => false
+```
+**Example**  
+```js
+boolNumToBool(3)// => Error
+```
+<a name="boolStrToBool"></a>
+
+## boolStrToBool(boolStr) ⇒ <code>boolean</code>
+<p>布尔型字符串 转为布尔值 'boolean' -&gt; boolean</p>
+
+**Kind**: global function  
+
+| Param | Type |
+| --- | --- |
+| boolStr | <code>string</code> | 
+
+**Example**  
+```js
+boolStrToBool('false')// => false
+```
+**Example**  
+```js
+boolStrToBool('true')// => true
+```
+**Example**  
+```js
+boolStrToBool(false)// => Error
+```
+<a name="boolToBoolNum"></a>
+
+## boolToBoolNum(bool) ⇒ <code>BoolNum</code>
+<p>boolean 转 0 | 1</p>
+
+**Kind**: global function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| bool | <code>boolean</code> | <p>true|false</p> |
+
+**Example**  
+```js
+boolToBoolNum(true)// => 1
+```
+**Example**  
+```js
+boolToBoolNum(false)// => 0
+```
+**Example**  
+```js
+boolToBoolNum(3)// => Error
+```
+<a name="boolToBoolStr"></a>
+
+## boolToBoolStr(bool) ⇒ <code>BoolStr</code>
+<p>布尔值转布尔型字符串 boolean -&gt; 'boolean'</p>
+
+**Kind**: global function  
+
+| Param | Type |
+| --- | --- |
+| bool | <code>boolean</code> | 
+
+**Example**  
+```js
+boolToBoolStr(true)// => 'true'
+```
+**Example**  
+```js
+boolToBoolStr(false)// => 'false'
+```
+**Example**  
+```js
+boolToBoolStr(undefined)// => Error()
+```
+<a name="boolToBoolWords"></a>
+
+## boolToBoolWords(bool) ⇒ <code>string</code>
+<p>bool值 转 文字(是|否)</p>
+
+**Kind**: global function  
+
+| Param | Type |
+| --- | --- |
+| bool | <code>boolean</code> | 
+
+**Example**  
+```js
+boolToBoolWords(false)// => '否'
+```
+**Example**  
+```js
+boolToBoolWords(true)// => '是'
+```
+**Example**  
+```js
+boolToBoolWords(1)// => Error
 ```
 <a name="compared"></a>
 
@@ -548,6 +689,18 @@ pageNoToOffset(1,15)// => '0'
 ```js
 pageNoToOffset(16,10)// => '150'
 ```
+<a name="parseJSON"></a>
+
+## parseJSON(json, defaultValue?) ⇒ <code>any</code>
+<p>安全解析JSON</p>
+
+**Kind**: global function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| json | <code>string</code> | <p>待解析JSON字符串</p> |
+| defaultValue? | <code>any</code> | <p>解析失败的默认值 可不传</p> |
+
 <a name="parseJSONArr"></a>
 
 ## parseJSONArr(jsonArr, [defaultValue]) ⇒ <code>Array.&lt;any&gt;</code>
