@@ -48,6 +48,10 @@
 <dd><p>字符串数字 大于</p></dd>
 <dt><a href="#gte">gte(vala, valb)</a> ⇒ <code>boolean</code></dt>
 <dd><p>字符串数字 大于等于</p></dd>
+<dt><a href="#isArray">isArray(testData)</a> ⇒ <code>boolean</code></dt>
+<dd><p>校验 是不是数组，解决 @types/lodash.d 中 重载被弃用</p></dd>
+<dt><a href="#isBoolean">isBoolean(testData)</a> ⇒ <code>boolean</code></dt>
+<dd><p>判断是否是 布尔类型</p></dd>
 <dt><a href="#isIE">isIE()</a> ⇒ <code>void</code></dt>
 <dd><p>判定当前浏览器是否是IE浏览器</p></dd>
 <dt><a href="#isOnlyFormFieldChange">isOnlyFormFieldChange(changedFields, itemKey)</a> ⇒ <code>boolean</code></dt>
@@ -84,6 +88,8 @@
 <dd><p>时间戳转moment对象</p></dd>
 <dt><a href="#useApiDownloadFile">useApiDownloadFile(path, name, [downloadGateWay])</a> ⇒ <code>void</code></dt>
 <dd><p>调用 后台api执行文件下载</p></dd>
+<dt><a href="#validHandle">validHandle(target, validHandle, inValidHandle, isValid)</a> ⇒ <code>any</code></dt>
+<dd><p>值有效无效（满足条件与否）的处理</p></dd>
 </dl>
 
 <a name="TreeData"></a>
@@ -499,6 +505,52 @@ gte('1.2','1.2')// => true
 ```js
 gte('1.2','1.3')// => false
 ```
+<a name="isArray"></a>
+
+## isArray(testData) ⇒ <code>boolean</code>
+<p>校验 是不是数组，解决 @types/lodash.d 中 重载被弃用</p>
+
+**Kind**: global function  
+
+| Param | Type |
+| --- | --- |
+| testData | <code>any</code> | 
+
+**Example**  
+```js
+isArray(null);// => false
+```
+**Example**  
+```js
+isArray([null]);// => true
+```
+**Example**  
+```js
+isArray<T>(array): array is T[];// => true// 注意，此处并未做T的类型校验，仅作类型保护
+```
+<a name="isBoolean"></a>
+
+## isBoolean(testData) ⇒ <code>boolean</code>
+<p>判断是否是 布尔类型</p>
+
+**Kind**: global function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| testData | <code>any</code> | <p>待判断的数据</p> |
+
+**Example**  
+```js
+isBoolean(1)// => false
+```
+**Example**  
+```js
+isBoolean(true)// => true
+```
+**Example**  
+```js
+isBoolean(false)// => false
+```
 <a name="isIE"></a>
 
 ## isIE() ⇒ <code>void</code>
@@ -810,4 +862,22 @@ timeStampToMoment(1555344000000)// => momentObj
 **Example**  
 ```js
 useApiDownloadFile('group3/AB/12/34/123456.jpg','123456.jpg')// => void
+```
+<a name="validHandle"></a>
+
+## validHandle(target, validHandle, inValidHandle, isValid) ⇒ <code>any</code>
+<p>值有效无效（满足条件与否）的处理</p>
+
+**Kind**: global function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| target | <code>any</code> | <p>待判定的值</p> |
+| validHandle | <code>ValueHandle</code> | <p>判定有效时调用的 函数|函数[]</p> |
+| inValidHandle | <code>ValueHandle</code> | <p>判定无效时调用的 函数|函数[]</p> |
+| isValid | <code>function</code> | <p>是否有效 的判定函数，=&gt; true 有效 ，=&gt; false 无效</p> |
+
+**Example**  
+```js
+import {toString,isArray,reduce} from lodash;validHandle([1,2,3], [val => reduce(val, (sum,val) => (sum + val), 0), toString], '0', isArray);// => '6'validHandle('string', [val => reduce(val, (sum,val) => (sum + val), 0), toString], '0', isArray);// => '0'
 ```

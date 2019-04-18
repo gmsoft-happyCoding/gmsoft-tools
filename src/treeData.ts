@@ -3,7 +3,7 @@
  * @Author: GM20171202
  * @Date: 2018-05-10 09:41:02
  * @Last Modified by: GM20171202
- * @Last Modified time: 2019-04-17 11:22:16
+ * @Last Modified time: 2019-04-17 14:57:53
  */
 import isArray from 'lodash/isArray';
 import isNil from 'lodash/isNil';
@@ -22,8 +22,8 @@ class TreeData {
   private itemKey: string;
   private treeItemKey: string;
   private pathStart: string;
-  private groupMap: Map<string | number, any>;
-  private nodesMap: Map<string | number, any>;
+  private groupMap: Map<any, any>;
+  private nodesMap: Map<any, any>;
   /**
    * @description 构造器
    * 当节点属性isLeaf 为true时，子节点集值为null

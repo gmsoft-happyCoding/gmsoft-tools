@@ -1,13 +1,17 @@
 import React from 'react';
-import { Card } from 'antd';
-import { fixed } from 'gmsoft-tools';
+import { Card, Alert } from 'antd';
+import * as tools from 'gmsoft-tools';
 
 const Common = () => {
-  console.log('>>>>');
+  // @ts-ignore
+  if (!window.tools) {
+    // @ts-ignore
+    window.tools = tools;
+  }
   return (
     <div style={{ background: '#ECECEC', padding: '30px' }}>
-      <Card title="通用测试" bordered={false} style={{ width: 300 }}>
-        <p>{fixed('0.1', '0')}</p>
+      <Card title="测试" bordered={false} style={{ width: 300 }}>
+        <Alert type="warning" message="请使用控制台，访问 window.tools 以测试" />
       </Card>
     </div>
   );

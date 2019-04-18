@@ -35,6 +35,9 @@ import biteToKBite from './biteToKBite';
 import boolNumToBool from './boolNumToBool';
 import boolToBoolNum from './boolToBoolNum';
 import boolToBoolWords from './boolToBoolWords';
+import validHandle from './validHandle';
+import isArray from './isArray';
+import isBoolean from './isBoolean';
 
 export {
   getValue,
@@ -74,4 +77,7 @@ export {
   boolNumToBool,
   boolToBoolNum,
   boolToBoolWords,
+  validHandle,
+  isArray,
+  isBoolean,
 };

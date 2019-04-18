@@ -1,6 +1,6 @@
 {
   "name": "gmsoft-tools",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "a function library maybe u will use",
   "main": "lib",
   "repository": "https://github.com/gmsoft-happyCoding/gmsoft-tools.git",
@@ -18,7 +18,7 @@
     "clear": "rimraf ./es && rimraf ./lib",
     "build": "yarn clear && rollup -c",
     "build:md": "rimraf ./api.md && node scripts/doc2md.js",
-    "start": "yarn clear && rollup -c -w"
+    "start": "rollup -c -w"
   },
   "dependencies": {
     "decimal.js-light": "^2.5.0",
