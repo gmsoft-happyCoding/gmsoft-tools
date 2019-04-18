@@ -879,5 +879,5 @@ useApiDownloadFile('group3/AB/12/34/123456.jpg','123456.jpg')// => void
 
 **Example**  
 ```js
-import {toString,isArray,reduce} from lodash;validHandle([1,2,3], [val => reduce(val, (sum,val) => (sum + val), 0), toString], '0', isArray);// => '6'validHandle('string', [val => reduce(val, (sum,val) => (sum + val), 0), toString], '0', isArray);// => '0'
+import {toString,isArray,reduce} from lodash;validHandle([1,2,3], [val => reduce(val, (sum,val) => (sum + val), 0), toString], ()=> '0', isArray);// => '6'validHandle('string', [val => reduce(val, (sum,val) => (sum + val), 0), toString], ()=> '0', isArray);// => '0'
 ```

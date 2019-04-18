@@ -17,9 +17,9 @@ type ValueHandle = Many<Handle>;
  * @example
  * import {toString,isArray,reduce} from lodash;
  *
- * validHandle([1,2,3], [val => reduce(val, (sum,val) => (sum + val), 0), toString], '0', isArray);
+ * validHandle([1,2,3], [val => reduce(val, (sum,val) => (sum + val), 0), toString], ()=> '0', isArray);
  * // => '6'
- * validHandle('string', [val => reduce(val, (sum,val) => (sum + val), 0), toString], '0', isArray);
+ * validHandle('string', [val => reduce(val, (sum,val) => (sum + val), 0), toString], ()=> '0', isArray);
  * // => '0'
  * @returns {any}
  */
