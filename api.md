@@ -43,7 +43,7 @@
 <dd><p>从response headers 中取出x-total-count</p></dd>
 <dt><a href="#getValue">getValue(target, paths, defaultValue?)</a> ⇒ <code>any</code></dt>
 <dd><p>安全取值，支持默认值
-如果目标值为null|undefined 则返回 defaultValue 或者 undefined</p></dd>
+如果目标值为 null|undefined 则返回 defaultValue</p></dd>
 <dt><a href="#gt">gt(vala, valb)</a> ⇒ <code>boolean</code></dt>
 <dd><p>字符串数字 大于</p></dd>
 <dt><a href="#gte">gte(vala, valb)</a> ⇒ <code>boolean</code></dt>
@@ -88,7 +88,7 @@
 <dd><p>时间戳转moment对象</p></dd>
 <dt><a href="#useApiDownloadFile">useApiDownloadFile(path, name, [downloadGateWay])</a> ⇒ <code>void</code></dt>
 <dd><p>调用 后台api执行文件下载</p></dd>
-<dt><a href="#validHandle">validHandle(target, validHandle, inValidHandle, isValid)</a> ⇒ <code>any</code></dt>
+<dt><a href="#validHandle">validHandle(target, validHandle, inValidHandle, [isValid])</a> ⇒ <code>any</code></dt>
 <dd><p>值有效无效（满足条件与否）的处理</p></dd>
 </dl>
 
@@ -435,7 +435,7 @@ getTotalInResHeader(response)// => '20'
 
 ## getValue(target, paths, defaultValue?) ⇒ <code>any</code>
 <p>安全取值，支持默认值
-如果目标值为null|undefined 则返回 defaultValue 或者 undefined</p>
+如果目标值为 null|undefined 则返回 defaultValue</p>
 
 **Kind**: global function  
 
@@ -447,23 +447,31 @@ getTotalInResHeader(response)// => '20'
 
 **Example**  
 ```js
-// returns nullgetValue(undefined,'name', null)
+getValue(undefined,'name', null)// => null
 ```
 **Example**  
 ```js
-// returns undefinedgetValue(null,'name')
+getValue(null,'name')// => undefined
 ```
 **Example**  
 ```js
-// returns 'zhangsan'getValue({age:12},'name','zhangsan')
+getValue({age:12},'name','zhangsan')// => 'zhangsan'
 ```
 **Example**  
 ```js
-// returns undefinedgetValue({age:12},'name')
+getValue({age:12},'name')// => undefined
 ```
 **Example**  
 ```js
-// returns 12getValue({age:12},'age',null)
+getValue({age:12},'age',null)// => 12
+```
+**Example**  
+```js
+getValue({size:null},'size','12')// => '12'
+```
+**Example**  
+```js
+getValue({size:undefined},'size','12')// => '12'
 ```
 <a name="gt"></a>
 
@@ -865,7 +873,7 @@ useApiDownloadFile('group3/AB/12/34/123456.jpg','123456.jpg')// => void
 ```
 <a name="validHandle"></a>
 
-## validHandle(target, validHandle, inValidHandle, isValid) ⇒ <code>any</code>
+## validHandle(target, validHandle, inValidHandle, [isValid]) ⇒ <code>any</code>
 <p>值有效无效（满足条件与否）的处理</p>
 
 **Kind**: global function  
@@ -875,7 +883,7 @@ useApiDownloadFile('group3/AB/12/34/123456.jpg','123456.jpg')// => void
 | target | <code>any</code> | <p>待判定的值</p> |
 | validHandle | <code>ValueHandle</code> | <p>判定有效时调用的 函数|函数[]</p> |
 | inValidHandle | <code>ValueHandle</code> | <p>判定无效时调用的 函数|函数[]</p> |
-| isValid | <code>function</code> | <p>是否有效 的判定函数，=&gt; true 有效 ，=&gt; false 无效</p> |
+| [isValid] | <code>function</code> | <p>是否有效 的判定函数，=&gt; true 有效 ，=&gt; false 无效</p> |
 
 **Example**  
 ```js
