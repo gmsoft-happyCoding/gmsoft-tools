@@ -3,26 +3,32 @@ import isNil from 'lodash/isNil';
 
 /**
  * 安全取值，支持默认值
- * 如果目标值为null|undefined 则返回 defaultValue 或者 undefined
+ * 如果目标值为 null|undefined 则返回 defaultValue
  * @function
  * @param  {any} target
  * @param  {any} paths
  * @param  {any} defaultValue?
  * @example
- * // returns null
  * getValue(undefined,'name', null)
+ * // => null
  * @example
- * // returns undefined
  * getValue(null,'name')
+ * // => undefined
  * @example
- * // returns 'zhangsan'
  * getValue({age:12},'name','zhangsan')
+ * // => 'zhangsan'
  * @example
- * // returns undefined
  * getValue({age:12},'name')
+ * // => undefined
  * @example
- * // returns 12
  * getValue({age:12},'age',null)
+ * // => 12
+ * @example
+ * getValue({size:null},'size','12')
+ * // => '12'
+ * @example
+ * getValue({size:undefined},'size','12')
+ * // => '12'
  * @returns {any}
  */
 export default function getValue(target: any, paths: any, defaultValue?: any) {

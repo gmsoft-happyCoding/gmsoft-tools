@@ -13,7 +13,7 @@ type ValueHandle = Many<Handle>;
  * @param {any} target - 待判定的值
  * @param {ValueHandle} validHandle - 判定有效时调用的 函数|函数[]
  * @param {ValueHandle} inValidHandle - 判定无效时调用的 函数|函数[]
- * @param {Function} isValid - 是否有效 的判定函数，=> true 有效 ，=> false 无效
+ * @param {Function} [isValid] - 是否有效 的判定函数，=> true 有效 ，=> false 无效
  * @example
  * import {toString,isArray,reduce} from lodash;
  *
