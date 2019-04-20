@@ -1,3 +1,10 @@
+## Modules
+
+<dl>
+<dt><a href="#module_actionHelper">actionHelper</a></dt>
+<dd></dd>
+</dl>
+
 ## Classes
 
 <dl>
@@ -91,6 +98,37 @@
 <dt><a href="#validHandle">validHandle(target, validHandle, inValidHandle, [isValid])</a> ⇒ <code>any</code></dt>
 <dd><p>值有效无效（满足条件与否）的处理</p></dd>
 </dl>
+
+<a name="module_actionHelper"></a>
+
+## actionHelper
+
+* [actionHelper](#module_actionHelper)
+    * [~bindActionsbind has namespace actions (one level)(...actionsCollection)](#module_actionHelper..bindActionsbind has namespace actions (one level)) ⇒ <code>function</code>
+    * [~unwrap(actions)](#module_actionHelper..unwrap) ⇒ <code>Actions</code>
+
+<a name="module_actionHelper..bindActionsbind has namespace actions (one level)"></a>
+
+### actionHelper~bindActionsbind has namespace actions (one level)(...actionsCollection) ⇒ <code>function</code>
+**Kind**: inner method of [<code>actionHelper</code>](#module_actionHelper)  
+**Returns**: <code>function</code> - <p>dispatch -&gt; object, object key is [namespace + postfix]</p>  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| ...actionsCollection | <code>object</code> | <p>action creator object, Usually created by createActions</p> |
+
+**Example**  
+```js
+param:const counterActions = createActions({ counter: {   add: identity,   minus: identity }});return: // every action creator wrapped into a dispatch call so they may be invoked directly. counterBoundActions: {   add,   minus }});
+```
+<a name="module_actionHelper..unwrap"></a>
+
+### actionHelper~unwrap(actions) ⇒ <code>Actions</code>
+**Kind**: inner method of [<code>actionHelper</code>](#module_actionHelper)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| actions | <code>NamespaceActions</code> | <p>{ namespace: Actions }</p> |
 
 <a name="TreeData"></a>
 
