@@ -3,10 +3,12 @@ import isNil from 'lodash/isNil';
 import isNaN from 'lodash/isNaN';
 
 /**
- * 格式化数字或数字字符串为￥开头的货币格式
+ * 格式化数字或数字字符串为￥开头的货币格式,可指定单位名称以及单位位置
  * @function
  * @param  {string|number} money
  * @param  {number} [float=2]
+ * @param  {string} [unit='￥']
+ * @param  {'before'|'after'} [unitPosition='before']
  * @example
  * currency(20000)
  * // => '￥20,000.00'
@@ -27,7 +29,12 @@ import isNaN from 'lodash/isNaN';
  * // => undefined
  * @returns {string}
  */
-export default function currency(money: string | number, float: number = 2): string | undefined {
+export default function currency(
+  money: string | number,
+  float: number = 2,
+  unit: string | null = '￥',
+  unitPosition: 'before' | 'after' = 'before'
+): string | undefined {
   if (isNil(money) || isNaN(money) || money === '') {
     return undefined;
   }
@@ -48,5 +55,8 @@ export default function currency(money: string | number, float: number = 2): str
   if (formatVal.startsWith(',')) {
     formatVal = formatVal.substring(1);
   }
-  return `￥${formatVal}`;
+  if (unit !== null) {
+    return unitPosition === 'before' ? `${unit}${formatVal}` : `${formatVal}${unit}`;
+  }
+  return formatVal;
 }
