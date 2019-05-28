@@ -38,6 +38,8 @@ import boolToBoolWords from './boolToBoolWords';
 import validHandle from './validHandle';
 import isArray from './isArray';
 import isBoolean from './isBoolean';
+import isArrayString from './isArrayString';
+import isArrayNumber from './isArrayNumber';
 
 export {
   getValue,
@@ -80,4 +82,6 @@ export {
   validHandle,
   isArray,
   isBoolean,
+  isArrayString,
+  isArrayNumber,
 };
