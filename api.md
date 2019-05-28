@@ -29,8 +29,8 @@
 常用于 Form.create() mapPropsToFields 时 将props.formFields 转为 Form需要的Fields对象</p></dd>
 <dt><a href="#createTimeStamp">createTimeStamp([date])</a> ⇒ <code>number</code></dt>
 <dd><p>创建一个时间戳</p></dd>
-<dt><a href="#currency">currency(money, [float])</a> ⇒ <code>string</code></dt>
-<dd><p>格式化数字或数字字符串为￥开头的货币格式</p></dd>
+<dt><a href="#currency">currency(money, [float], [unit], [unitPosition])</a> ⇒ <code>string</code></dt>
+<dd><p>格式化数字或数字字符串为￥开头的货币格式,可指定单位名称以及单位位置</p></dd>
 <dt><a href="#divide">divide(dividend, divisor)</a> ⇒ <code>string</code></dt>
 <dd><p>除法</p></dd>
 <dt><a href="#fixed">fixed(handle, fixedNum)</a> ⇒ <code>string</code></dt>
@@ -50,6 +50,10 @@
 <dd><p>字符串数字 大于等于</p></dd>
 <dt><a href="#isArray">isArray(testData)</a> ⇒ <code>boolean</code></dt>
 <dd><p>校验 是不是数组，解决 @types/lodash.d 中 重载被弃用</p></dd>
+<dt><a href="#isArrayNumber">isArrayNumber(testArr)</a> ⇒ <code>boolean</code></dt>
+<dd><p>判定 是否是 数字 组成的数组</p></dd>
+<dt><a href="#isArrayString">isArrayString(testArr)</a> ⇒ <code>boolean</code></dt>
+<dd><p>判定 是否是 字符串 组成的数组</p></dd>
 <dt><a href="#isBoolean">isBoolean(testData)</a> ⇒ <code>boolean</code></dt>
 <dd><p>判断是否是 布尔类型</p></dd>
 <dt><a href="#isIE">isIE()</a> ⇒ <code>void</code></dt>
@@ -315,8 +319,8 @@ createTimeStamp(new Date('2012-12-24 12:33:14'))// => 1356323594000
 ```
 <a name="currency"></a>
 
-## currency(money, [float]) ⇒ <code>string</code>
-<p>格式化数字或数字字符串为￥开头的货币格式</p>
+## currency(money, [float], [unit], [unitPosition]) ⇒ <code>string</code>
+<p>格式化数字或数字字符串为￥开头的货币格式,可指定单位名称以及单位位置</p>
 
 **Kind**: global function  
 
@@ -324,6 +328,8 @@ createTimeStamp(new Date('2012-12-24 12:33:14'))// => 1356323594000
 | --- | --- | --- |
 | money | <code>string</code> \| <code>number</code> |  | 
 | [float] | <code>number</code> | <code>2</code> | 
+| [unit] | <code>string</code> | <code>&quot;&#x27;￥&#x27;&quot;</code> | 
+| [unitPosition] | <code>&#x27;before&#x27;</code> \| <code>&#x27;after&#x27;</code> | <code>&#x27;before&#x27;</code> | 
 
 **Example**  
 ```js
@@ -332,6 +338,14 @@ currency(20000)// => '￥20,000.00'
 **Example**  
 ```js
 currency('20000',3)// => '￥20,000.000'
+```
+**Example**  
+```js
+currency('20000',undefined,'$')// => '$20,000.00'
+```
+**Example**  
+```js
+currency('20000',undefined,"元","after",)// => '20,000.00元'
 ```
 **Example**  
 ```js
@@ -535,6 +549,60 @@ isArray([null]);// => true
 **Example**  
 ```js
 isArray<T>(array): array is T[];// => true// 注意，此处并未做T的类型校验，仅作类型保护
+```
+<a name="isArrayNumber"></a>
+
+## isArrayNumber(testArr) ⇒ <code>boolean</code>
+<p>判定 是否是 数字 组成的数组</p>
+
+**Kind**: global function  
+
+| Param | Type |
+| --- | --- |
+| testArr | <code>any</code> | 
+
+**Example**  
+```js
+isArrayNumber([2,1])// => true
+```
+**Example**  
+```js
+isArrayNumber(['ssss',2])// => false
+```
+**Example**  
+```js
+isArrayNumber(1)// => false
+```
+**Example**  
+```js
+isArrayNumber([])// => true
+```
+<a name="isArrayString"></a>
+
+## isArrayString(testArr) ⇒ <code>boolean</code>
+<p>判定 是否是 字符串 组成的数组</p>
+
+**Kind**: global function  
+
+| Param | Type |
+| --- | --- |
+| testArr | <code>any</code> | 
+
+**Example**  
+```js
+isArrayString(['ssss','sssz'])// => true
+```
+**Example**  
+```js
+isArrayString(['ssss',2])// => false
+```
+**Example**  
+```js
+isArrayString(1)// => false
+```
+**Example**  
+```js
+isArrayString([])// => true
 ```
 <a name="isBoolean"></a>
 

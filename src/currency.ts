@@ -16,6 +16,12 @@ import isNaN from 'lodash/isNaN';
  * currency('20000',3)
  * // => '￥20,000.000'
  * @example
+ * currency('20000',undefined,'$')
+ * // => '$20,000.00'
+ * @example
+ * currency('20000',undefined,"元","after",)
+ * // => '20,000.00元'
+ * @example
  * currency(null)
  * // => undefined
  * @example
