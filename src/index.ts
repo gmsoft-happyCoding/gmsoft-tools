@@ -40,6 +40,9 @@ import isArray from './isArray';
 import isBoolean from './isBoolean';
 import isArrayString from './isArrayString';
 import isArrayNumber from './isArrayNumber';
+import getSearch from './getSearch';
+import isNonEmptyStr from './isNonEmptyStr';
+import parseSearch from './parseSearch';
 
 export {
   getValue,
@@ -84,4 +87,7 @@ export {
   isBoolean,
   isArrayString,
   isArrayNumber,
+  getSearch,
+  isNonEmptyStr,
+  parseSearch,
 };

@@ -37,6 +37,8 @@
 <dd><p>数字字符串 四舍五入</p></dd>
 <dt><a href="#getPopupContainer">getPopupContainer(triggerNode?)</a> ⇒ <code>HTMLElement</code></dt>
 <dd><p>Select 等Antd组件getPopupContainer 公用方法</p></dd>
+<dt><a href="#getSearch">getSearch(params)</a> ⇒ <code>string</code></dt>
+<dd><p>传入参数对象，返回search结构的字符串</p></dd>
 <dt><a href="#getSuffix">getSuffix(string)</a> ⇒ <code>string</code> | <code>undefined</code></dt>
 <dd><p>从文件名中提取后缀名</p></dd>
 <dt><a href="#getTotalInResHeader">getTotalInResHeader(response, [defaultValue])</a> ⇒ <code>number</code></dt>
@@ -58,6 +60,8 @@
 <dd><p>判断是否是 布尔类型</p></dd>
 <dt><a href="#isIE">isIE()</a> ⇒ <code>void</code></dt>
 <dd><p>判定当前浏览器是否是IE浏览器</p></dd>
+<dt><a href="#isNonEmptyStr">isNonEmptyStr(str)</a> ⇒ <code>boolean</code></dt>
+<dd><p>判定是不是非空的字符串</p></dd>
 <dt><a href="#isOnlyFormFieldChange">isOnlyFormFieldChange(changedFields, itemKey)</a> ⇒ <code>boolean</code></dt>
 <dd><p>判定表单是否只有某项变更了值</p></dd>
 <dt><a href="#isStrNum">isStrNum(testStr)</a> ⇒ <code>boolean</code></dt>
@@ -82,6 +86,8 @@
 <dt><a href="#parseJSONArr">parseJSONArr(jsonArr, [defaultValue])</a> ⇒ <code>Array.&lt;any&gt;</code></dt>
 <dd><p>安全解析 JSON数组
 如果解析结果不是数组则视为无效，返回defaultValue||[]</p></dd>
+<dt><a href="#parseSearch">parseSearch(searchStr)</a> ⇒ <code>StringObject</code></dt>
+<dd><p>解析 search</p></dd>
 <dt><a href="#strMapToObj">strMapToObj(strMap)</a> ⇒ <code>object</code></dt>
 <dd><p>Map 转 Object</p></dd>
 <dt><a href="#subtract">subtract(minuend, subtrahend)</a> ⇒ <code>string</code></dt>
@@ -414,6 +420,33 @@ fixed('3.456',5)// => '3.45600'
 ```js
 <Select getPopupContainer={getPopupContainer} {...otherProps} />
 ```
+<a name="getSearch"></a>
+
+## getSearch(params) ⇒ <code>string</code>
+<p>传入参数对象，返回search结构的字符串</p>
+
+**Kind**: global function  
+
+| Param | Type |
+| --- | --- |
+| params | <code>StringObject</code> | 
+
+**Example**  
+```js
+getSearch()// => ''
+```
+**Example**  
+```js
+getSearch('string')// => ''
+```
+**Example**  
+```js
+getSearch({})// => ''
+```
+**Example**  
+```js
+getSearch({name:'kangkang',age:12})// => '?name=kangkang&age=12'
+```
 <a name="getSuffix"></a>
 
 ## getSuffix(string) ⇒ <code>string</code> \| <code>undefined</code>
@@ -637,6 +670,33 @@ isBoolean(false)// => false
 ```js
 isIE()// => false
 ```
+<a name="isNonEmptyStr"></a>
+
+## isNonEmptyStr(str) ⇒ <code>boolean</code>
+<p>判定是不是非空的字符串</p>
+
+**Kind**: global function  
+
+| Param |
+| --- |
+| str | 
+
+**Example**  
+```js
+isNonEmptyStr(3)// => false
+```
+**Example**  
+```js
+isNonEmptyStr()// => false
+```
+**Example**  
+```js
+isNonEmptyStr('')// => false
+```
+**Example**  
+```js
+isNonEmptyStr('3')// => true
+```
 <a name="isOnlyFormFieldChange"></a>
 
 ## isOnlyFormFieldChange(changedFields, itemKey) ⇒ <code>boolean</code>
@@ -850,6 +910,29 @@ parseJSONArr("[12,31,3231]")// => [12,31,3231]
 **Example**  
 ```js
 parseJSONArr("{}")// => []
+```
+<a name="parseSearch"></a>
+
+## parseSearch(searchStr) ⇒ <code>StringObject</code>
+<p>解析 search</p>
+
+**Kind**: global function  
+
+| Param | Type |
+| --- | --- |
+| searchStr | <code>string</code> | 
+
+**Example**  
+```js
+parseSearch()// => {}
+```
+**Example**  
+```js
+parseSearch('')// => {}
+```
+**Example**  
+```js
+parseSearch('?name=kangkang&age=12')// => {name: "kangkang", age: "12"}
 ```
 <a name="strMapToObj"></a>
 
