@@ -1,4 +1,3 @@
-import toString from 'lodash/toString';
 import baseIsIE from './internal/baseIsIE';
 
 /**
@@ -6,17 +5,16 @@ import baseIsIE from './internal/baseIsIE';
  * @function
  * @param  {string} path
  * @param  {string} name
- * @param  {string} [downloadGateWay=toString(process.env.REACT_APP_API_DJC_GATEWAY)]
- * 如果不传入 则项目需配置 process.env.REACT_APP_API_DJC_GATEWAY
+ * @param  {string} downloadGateWay
  * @example
- * useApiDownloadFile('group3/AB/12/34/123456.jpg','123456.jpg')
+ * useApiDownloadFile('group3/AB/12/34/123456.jpg','123456.jpg','baidu.com')
  * // => void
  * @returns {void}
  */
 export default function useApiDownloadFile(
   path: string,
   name: string,
-  downloadGateWay: string = toString(process.env.REACT_APP_API_DJC_GATEWAY)
+  downloadGateWay: string
 ): void {
   let fileName = name;
   if (baseIsIE()) {

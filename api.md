@@ -35,6 +35,8 @@
 <dd><p>除法</p></dd>
 <dt><a href="#fixed">fixed(handle, fixedNum)</a> ⇒ <code>string</code></dt>
 <dd><p>数字字符串 四舍五入</p></dd>
+<dt><a href="#getNull">getNull()</a> ⇒ <code>null</code></dt>
+<dd><p>获得null</p></dd>
 <dt><a href="#getPopupContainer">getPopupContainer(triggerNode?)</a> ⇒ <code>HTMLElement</code></dt>
 <dd><p>Select 等Antd组件getPopupContainer 公用方法</p></dd>
 <dt><a href="#getSearch">getSearch(params)</a> ⇒ <code>string</code></dt>
@@ -58,6 +60,8 @@
 <dd><p>判定 是否是 字符串 组成的数组</p></dd>
 <dt><a href="#isBoolean">isBoolean(testData)</a> ⇒ <code>boolean</code></dt>
 <dd><p>判断是否是 布尔类型</p></dd>
+<dt><a href="#isEmpty">isEmpty(val)</a> ⇒ <code>boolean</code></dt>
+<dd><p>判定 是否为空</p></dd>
 <dt><a href="#isIE">isIE()</a> ⇒ <code>void</code></dt>
 <dd><p>判定当前浏览器是否是IE浏览器</p></dd>
 <dt><a href="#isNonEmptyStr">isNonEmptyStr(str)</a> ⇒ <code>boolean</code></dt>
@@ -96,7 +100,9 @@
 <dd><p>时间戳格式化</p></dd>
 <dt><a href="#timeStampToMoment">timeStampToMoment(timeStamp)</a> ⇒ <code>Monent.Moment</code></dt>
 <dd><p>时间戳转moment对象</p></dd>
-<dt><a href="#useApiDownloadFile">useApiDownloadFile(path, name, [downloadGateWay])</a> ⇒ <code>void</code></dt>
+<dt><a href="#trimObjValue">trimObjValue(obj)</a> ⇒ <code>StringObject</code></dt>
+<dd><p>移除对象值为string的前后空格，值不是string不作处理</p></dd>
+<dt><a href="#useApiDownloadFile">useApiDownloadFile(path, name, downloadGateWay)</a> ⇒ <code>void</code></dt>
 <dd><p>调用 后台api执行文件下载</p></dd>
 <dt><a href="#validHandle">validHandle(target, validHandle, inValidHandle, [isValid])</a> ⇒ <code>any</code></dt>
 <dd><p>值有效无效（满足条件与否）的处理</p></dd>
@@ -405,6 +411,16 @@ fixed('3.456',2)// => '3.46'
 ```js
 fixed('3.456',5)// => '3.45600'
 ```
+<a name="getNull"></a>
+
+## getNull() ⇒ <code>null</code>
+<p>获得null</p>
+
+**Kind**: global function  
+**Example**  
+```js
+getNull()// => null
+```
 <a name="getPopupContainer"></a>
 
 ## getPopupContainer(triggerNode?) ⇒ <code>HTMLElement</code>
@@ -659,6 +675,53 @@ isBoolean(true)// => true
 **Example**  
 ```js
 isBoolean(false)// => false
+```
+<a name="isEmpty"></a>
+
+## isEmpty(val) ⇒ <code>boolean</code>
+<p>判定 是否为空</p>
+
+**Kind**: global function  
+
+| Param | Type |
+| --- | --- |
+| val | <code>any</code> | 
+
+**Example**  
+```js
+isEmpty(undefined)// => true
+```
+**Example**  
+```js
+isEmpty(null)// => true
+```
+**Example**  
+```js
+isEmpty([])// => true
+```
+**Example**  
+```js
+isEmpty({})// => true
+```
+**Example**  
+```js
+isEmpty('')// => true
+```
+**Example**  
+```js
+isEmpty(NaN)// => true
+```
+**Example**  
+```js
+isEmpty(new Map())// => true
+```
+**Example**  
+```js
+isEmpty(new Set())// => true
+```
+**Example**  
+```js
+isEmpty(0)// => false
 ```
 <a name="isIE"></a>
 
@@ -1005,22 +1068,37 @@ timeStampToDate(1555403211557,"YYYY-MM-DD hh:mm:ss")// => '"2019-04-16 04:26:51
 ```js
 timeStampToMoment(1555344000000)// => momentObj
 ```
+<a name="trimObjValue"></a>
+
+## trimObjValue(obj) ⇒ <code>StringObject</code>
+<p>移除对象值为string的前后空格，值不是string不作处理</p>
+
+**Kind**: global function  
+
+| Param | Type |
+| --- | --- |
+| obj | <code>StringObject</code> | 
+
+**Example**  
+```js
+trimObjValue({name:'kk ',age:12})// => {name:'kk',age:12}
+```
 <a name="useApiDownloadFile"></a>
 
-## useApiDownloadFile(path, name, [downloadGateWay]) ⇒ <code>void</code>
+## useApiDownloadFile(path, name, downloadGateWay) ⇒ <code>void</code>
 <p>调用 后台api执行文件下载</p>
 
 **Kind**: global function  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| path | <code>string</code> |  |  |
-| name | <code>string</code> |  |  |
-| [downloadGateWay] | <code>string</code> | <code>&quot;toString(process.env.REACT_APP_API_DJC_GATEWAY)&quot;</code> | <p>如果不传入 则项目需配置 process.env.REACT_APP_API_DJC_GATEWAY</p> |
+| Param | Type |
+| --- | --- |
+| path | <code>string</code> | 
+| name | <code>string</code> | 
+| downloadGateWay | <code>string</code> | 
 
 **Example**  
 ```js
-useApiDownloadFile('group3/AB/12/34/123456.jpg','123456.jpg')// => void
+useApiDownloadFile('group3/AB/12/34/123456.jpg','123456.jpg','baidu.com')// => void
 ```
 <a name="validHandle"></a>
 

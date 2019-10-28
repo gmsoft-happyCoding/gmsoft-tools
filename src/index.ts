@@ -43,6 +43,9 @@ import isArrayNumber from './isArrayNumber';
 import getSearch from './getSearch';
 import isNonEmptyStr from './isNonEmptyStr';
 import parseSearch from './parseSearch';
+import getNull from './getNull';
+import trimObjValue from './trimObjValue';
+import isEmpty from './isEmpty';
 
 export {
   getValue,
@@ -90,4 +93,7 @@ export {
   getSearch,
   isNonEmptyStr,
   parseSearch,
+  getNull,
+  trimObjValue,
+  isEmpty,
 };
