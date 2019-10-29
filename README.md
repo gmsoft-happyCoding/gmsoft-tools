@@ -11,7 +11,13 @@
 
 ## Api
 
-[Api文档](api.md)
+[Api文档](api.md)  
+
+## 更新日志  
+
+- ### 1.1.0  
+  2019-10-29      
+  - 🗑 废弃 <s>useApiDownloadFile</s> ，请使用 ``` downloadFileByApi ```
 
 ## 参考资料
 
