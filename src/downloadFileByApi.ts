@@ -7,11 +7,11 @@ import baseIsIE from './internal/baseIsIE';
  * @param  {string} name
  * @param  {string} downloadGateWay
  * @example
- * useApiDownloadFile('group3/AB/12/34/123456.jpg','123456.jpg','baidu.com')
+ * downloadFileByApi('group3/AB/12/34/123456.jpg','123456.jpg','baidu.com')
  * // => void
  * @returns {void}
  */
-export default function useApiDownloadFile(
+export default function downloadFileByApi(
   path: string,
   name: string,
   downloadGateWay: string

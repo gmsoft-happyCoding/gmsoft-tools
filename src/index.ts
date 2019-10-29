@@ -16,7 +16,7 @@ import strMapToObj from './strMapToObj';
 import parseJSONArr from './parseJSONArr';
 import currency from './currency';
 import getSuffix from './getSuffix';
-import useApiDownloadFile from './useApiDownloadFile';
+import downloadFileByApi from './downloadFileByApi';
 import getTotalInResHeader from './getTotalInResHeader';
 import timeStampFormat from './timeStampFormat';
 import createTimeStamp from './createTimeStamp';
@@ -66,7 +66,7 @@ export {
   parseJSONArr,
   currency,
   getSuffix,
-  useApiDownloadFile,
+  downloadFileByApi,
   getTotalInResHeader,
   timeStampFormat,
   createTimeStamp,
