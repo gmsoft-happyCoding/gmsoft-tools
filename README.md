@@ -15,6 +15,11 @@
 
 ## 更新日志  
 
+- ### 1.1.1  
+  2019-11-14      
+  - 🌟 新增 [validObjValue](https://github.com/gmsoft-happyCoding/gmsoft-tools/blob/master/api.md#validObjValue)，清理掉对象值为null或者undefined的属性
+  - 🐞 修复 [getSearch](https://github.com/gmsoft-happyCoding/gmsoft-tools/blob/master/api.md#getSearch)，传入对象的值先做非空过滤，再行转换
+
 - ### 1.1.0  
   2019-10-29      
   - 🗑 废弃 <s>useApiDownloadFile</s> ，请使用 ``` downloadFileByApi ```

@@ -33,6 +33,8 @@
 <dd><p>格式化数字或数字字符串为￥开头的货币格式,可指定单位名称以及单位位置</p></dd>
 <dt><a href="#divide">divide(dividend, divisor)</a> ⇒ <code>string</code></dt>
 <dd><p>除法</p></dd>
+<dt><a href="#downloadFileByApi">downloadFileByApi(path, name, downloadGateWay)</a> ⇒ <code>void</code></dt>
+<dd><p>调用 后台api执行文件下载</p></dd>
 <dt><a href="#fixed">fixed(handle, fixedNum)</a> ⇒ <code>string</code></dt>
 <dd><p>数字字符串 四舍五入</p></dd>
 <dt><a href="#getNull">getNull()</a> ⇒ <code>null</code></dt>
@@ -102,10 +104,10 @@
 <dd><p>时间戳转moment对象</p></dd>
 <dt><a href="#trimObjValue">trimObjValue(obj)</a> ⇒ <code>StringObject</code></dt>
 <dd><p>移除对象值为string的前后空格，值不是string不作处理</p></dd>
-<dt><a href="#useApiDownloadFile">useApiDownloadFile(path, name, downloadGateWay)</a> ⇒ <code>void</code></dt>
-<dd><p>调用 后台api执行文件下载</p></dd>
 <dt><a href="#validHandle">validHandle(target, validHandle, inValidHandle, [isValid])</a> ⇒ <code>any</code></dt>
 <dd><p>值有效无效（满足条件与否）的处理</p></dd>
+<dt><a href="#validObjValue">validObjValue(obj)</a> ⇒ <code>Object</code></dt>
+<dd><p>清理掉对象值为null或者undefined的属性</p></dd>
 </dl>
 
 <a name="TreeData"></a>
@@ -391,6 +393,23 @@ currency('')// => undefined
 ```js
 divide('1.21','1.1')// => '1.1'
 ```
+<a name="downloadFileByApi"></a>
+
+## downloadFileByApi(path, name, downloadGateWay) ⇒ <code>void</code>
+<p>调用 后台api执行文件下载</p>
+
+**Kind**: global function  
+
+| Param | Type |
+| --- | --- |
+| path | <code>string</code> | 
+| name | <code>string</code> | 
+| downloadGateWay | <code>string</code> | 
+
+**Example**  
+```js
+downloadFileByApi('group3/AB/12/34/123456.jpg','123456.jpg','baidu.com')// => void
+```
 <a name="fixed"></a>
 
 ## fixed(handle, fixedNum) ⇒ <code>string</code>
@@ -462,6 +481,10 @@ getSearch({})// => ''
 **Example**  
 ```js
 getSearch({name:'kangkang',age:12})// => '?name=kangkang&age=12'
+```
+**Example**  
+```js
+getSearch({name:null,age:12})// => '?age=12'
 ```
 <a name="getSuffix"></a>
 
@@ -1083,23 +1106,6 @@ timeStampToMoment(1555344000000)// => momentObj
 ```js
 trimObjValue({name:'kk ',age:12})// => {name:'kk',age:12}
 ```
-<a name="useApiDownloadFile"></a>
-
-## useApiDownloadFile(path, name, downloadGateWay) ⇒ <code>void</code>
-<p>调用 后台api执行文件下载</p>
-
-**Kind**: global function  
-
-| Param | Type |
-| --- | --- |
-| path | <code>string</code> | 
-| name | <code>string</code> | 
-| downloadGateWay | <code>string</code> | 
-
-**Example**  
-```js
-useApiDownloadFile('group3/AB/12/34/123456.jpg','123456.jpg','baidu.com')// => void
-```
 <a name="validHandle"></a>
 
 ## validHandle(target, validHandle, inValidHandle, [isValid]) ⇒ <code>any</code>
@@ -1117,4 +1123,19 @@ useApiDownloadFile('group3/AB/12/34/123456.jpg','123456.jpg','baidu.com')// => 
 **Example**  
 ```js
 import {toString,isArray,reduce} from lodash;validHandle([1,2,3], [val => reduce(val, (sum,val) => (sum + val), 0), toString], ()=> '0', isArray);// => '6'validHandle('string', [val => reduce(val, (sum,val) => (sum + val), 0), toString], ()=> '0', isArray);// => '0'
+```
+<a name="validObjValue"></a>
+
+## validObjValue(obj) ⇒ <code>Object</code>
+<p>清理掉对象值为null或者undefined的属性</p>
+
+**Kind**: global function  
+
+| Param | Type |
+| --- | --- |
+| obj | <code>Object</code> | 
+
+**Example**  
+```js
+validObjValue({name:null,age:12})// => {age:12}
 ```

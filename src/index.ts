@@ -46,6 +46,7 @@ import parseSearch from './parseSearch';
 import getNull from './getNull';
 import trimObjValue from './trimObjValue';
 import isEmpty from './isEmpty';
+import validObjValue from './validObjValue';
 
 export {
   getValue,
@@ -96,4 +97,5 @@ export {
   getNull,
   trimObjValue,
   isEmpty,
+  validObjValue,
 };
