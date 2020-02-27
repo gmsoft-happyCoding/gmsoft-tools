@@ -15,6 +15,10 @@
 
 ## 更新日志  
 
+- ### 1.1.2  
+  2020-2-27     
+  - 🐞 修复 [currency](https://github.com/gmsoft-happyCoding/gmsoft-tools/blob/master/api.md#currency)，修复负数时展示bug
+  
 - ### 1.1.1  
   2019-11-14      
   - 🌟 新增 [validObjValue](https://github.com/gmsoft-happyCoding/gmsoft-tools/blob/master/api.md#validObjValue)，清理掉对象值为null或者undefined的属性

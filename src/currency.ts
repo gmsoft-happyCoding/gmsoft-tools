@@ -16,6 +16,9 @@ import isNaN from 'lodash/isNaN';
  * currency('20000',3)
  * // => '￥20,000.000'
  * @example
+ * currency('-20000',3)
+ * // => '￥-20,000.000'
+ * @example
  * currency('20000',undefined,'$')
  * // => '$20,000.00'
  * @example
@@ -60,6 +63,8 @@ export default function currency(
   }
   if (formatVal.startsWith(',')) {
     formatVal = formatVal.substring(1);
+  } else if (formatVal.startsWith('-,')) {
+    formatVal = `-${formatVal.substring(2)}`;
   }
   if (unit !== null) {
     return unitPosition === 'before' ? `${unit}${formatVal}` : `${formatVal}${unit}`;
