@@ -1,9 +1,9 @@
 {
-  "name": "gmsoft-tools",
-  "version": "1.1.2",
+  "name": "@gmsoft/tools",
+  "version": "1.1.3",
   "description": "a function library maybe u will use",
   "main": "lib",
-  "repository": "https://github.com/gmsoft-happyCoding/gmsoft-tools.git",
+  "repository": "gmsoft-happyCoding/gmsoft-tools",
   "author": "bddandelion <bddandelion729@gmail.com>",
   "license": "MIT",
   "module": "es",

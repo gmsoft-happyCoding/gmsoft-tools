@@ -33,7 +33,7 @@
 <dd><p>格式化数字或数字字符串为￥开头的货币格式,可指定单位名称以及单位位置</p></dd>
 <dt><a href="#divide">divide(dividend, divisor)</a> ⇒ <code>string</code></dt>
 <dd><p>除法</p></dd>
-<dt><a href="#downloadFileByApi">downloadFileByApi(path, name, downloadGateWay)</a> ⇒ <code>void</code></dt>
+<dt><a href="#downloadFileByApi">downloadFileByApi(path, name, downloadGateWay, business?)</a> ⇒ <code>void</code></dt>
 <dd><p>调用 后台api执行文件下载</p></dd>
 <dt><a href="#fixed">fixed(handle, fixedNum)</a> ⇒ <code>string</code></dt>
 <dd><p>数字字符串 四舍五入</p></dd>
@@ -399,7 +399,7 @@ divide('1.21','1.1')// => '1.1'
 ```
 <a name="downloadFileByApi"></a>
 
-## downloadFileByApi(path, name, downloadGateWay) ⇒ <code>void</code>
+## downloadFileByApi(path, name, downloadGateWay, business?) ⇒ <code>void</code>
 <p>调用 后台api执行文件下载</p>
 
 **Kind**: global function  
@@ -409,10 +409,11 @@ divide('1.21','1.1')// => '1.1'
 | path | <code>string</code> | 
 | name | <code>string</code> | 
 | downloadGateWay | <code>string</code> | 
+| business? | <code>string</code> | 
 
 **Example**  
 ```js
-downloadFileByApi('group3/AB/12/34/123456.jpg','123456.jpg','baidu.com')// => void
+downloadFileByApi('group3/AB/12/34/123456.jpg','123456.jpg','baidu.com','file50m')// => void
 ```
 <a name="fixed"></a>
 

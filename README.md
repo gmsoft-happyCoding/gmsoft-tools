@@ -1,11 +1,11 @@
-# gmsoft-tools - gmsoft公用方法集
-[![NPM](https://img.shields.io/npm/v/gmsoft-tools.svg)](https://www.npmjs.com/package/gmsoft-tools)
-[![DOWNLOAD](https://img.shields.io/npm/dt/gmsoft-tools.svg)](https://www.npmjs.com/package/gmsoft-tools)
+# @gmsoft/tools - gmsoft公用方法集
+[![NPM](https://img.shields.io/npm/v/@gmsoft/tools.svg)](https://www.npmjs.com/package/@gmsoft/tools)
+[![DOWNLOAD](https://img.shields.io/npm/dt/@gmsoft/tools.svg)](https://www.npmjs.com/package/@gmsoft/tools)
 ## install
 
 ```
 
-  yarn add gmsoft-tools
+  yarn add @gmsoft/tools
 
 ```
 
@@ -15,6 +15,10 @@
 
 ## 更新日志  
 
+- ### 1.2.0  
+  2020-3-9     
+  - 🌟 项目迁移到  ```@gmsoft/tools```
+  - 🌟 新增 [downloadFileByApi](https://github.com/gmsoft-happyCoding/gmsoft-tools/blob/master/api.md#downloadFileByApi)，新增 ```business``` 参数
 - ### 1.1.2  
   2020-2-27     
   - 🐞 修复 [currency](https://github.com/gmsoft-happyCoding/gmsoft-tools/blob/master/api.md#currency)，修复负数时展示bug
