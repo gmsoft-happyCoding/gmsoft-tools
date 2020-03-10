@@ -45,6 +45,8 @@
 <dd><p>传入参数对象，返回search结构的字符串</p></dd>
 <dt><a href="#getSuffix">getSuffix(string)</a> ⇒ <code>string</code> | <code>undefined</code></dt>
 <dd><p>从文件名中提取后缀名</p></dd>
+<dt><a href="#getTopRoot">getTopRoot()</a> ⇒ <code>HTMLElement</code></dt>
+<dd><p>顶层窗口引用挂载节点</p></dd>
 <dt><a href="#getTotalInResHeader">getTotalInResHeader(response, [defaultValue])</a> ⇒ <code>number</code></dt>
 <dd><p>从response headers 中取出x-total-count</p></dd>
 <dt><a href="#getValue">getValue(target, paths, defaultValue?)</a> ⇒ <code>any</code></dt>
@@ -506,6 +508,12 @@ getSearch({name:null,age:12})// => '?age=12'
 ```js
 currency('helloWorld.svg')// => 'svg'
 ```
+<a name="getTopRoot"></a>
+
+## getTopRoot() ⇒ <code>HTMLElement</code>
+<p>顶层窗口引用挂载节点</p>
+
+**Kind**: global function  
 <a name="getTotalInResHeader"></a>
 
 ## getTotalInResHeader(response, [defaultValue]) ⇒ <code>number</code>

@@ -1,3 +1,5 @@
+import getTopRoot from './getTopRoot';
+
 /**
  * Select 等Antd组件getPopupContainer 公用方法
  * @function
@@ -13,6 +15,5 @@ export default function getPopupContainer(triggerNode?: Element): HTMLElement {
     // @ts-ignore
     return triggerNode.parentNode;
   }
-  console.error('[getPopupContainer]极端情况出现', triggerNode);
-  return document.getElementsByTagName('body')[0];
+  return getTopRoot();
 }

@@ -47,6 +47,7 @@ import getNull from './getNull';
 import trimObjValue from './trimObjValue';
 import isEmpty from './isEmpty';
 import validObjValue from './validObjValue';
+import getTopRoot from './getTopRoot';
 
 export {
   getValue,
@@ -98,4 +99,5 @@ export {
   trimObjValue,
   isEmpty,
   validObjValue,
+  getTopRoot,
 };

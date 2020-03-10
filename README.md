@@ -15,6 +15,10 @@
 
 ## 更新日志  
 
+- ### 1.2.1  
+  2020-3-10     
+  - 🌟 新增 [getTopRoot](https://github.com/gmsoft-happyCoding/gmsoft-tools/blob/master/api.md#getTopRoot)，顶层窗口引用挂载节点
+  - 🐞 修改 [getPopupContainer](https://github.com/gmsoft-happyCoding/gmsoft-tools/blob/master/api.md#getPopupContainer)，触碰保底机制时返回 [getTopRoot](https://github.com/gmsoft-happyCoding/gmsoft-tools/blob/master/api.md#getTopRoot) 的调用结果
 - ### 1.2.0  
   2020-3-9     
   - 🌟 项目迁移到  ```@gmsoft/tools```

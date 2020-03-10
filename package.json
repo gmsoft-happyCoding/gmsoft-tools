@@ -1,6 +1,6 @@
 {
   "name": "@gmsoft/tools",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "a function library maybe u will use",
   "main": "lib",
   "repository": "gmsoft-happyCoding/gmsoft-tools",
@@ -18,6 +18,7 @@
     "clear": "rimraf ./es && rimraf ./lib",
     "build": "yarn clear && rollup -c",
     "build:md": "rimraf ./api.md && node scripts/doc2md.js",
+    "pub": "npm publish --access public",
     "start": "rollup -c -w"
   },
   "dependencies": {
