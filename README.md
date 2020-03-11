@@ -15,6 +15,9 @@
 
 ## 更新日志  
 
+- ### 1.2.2  
+  2020-3-11     
+  - 🐞 修改 [getTopRoot](https://github.com/gmsoft-happyCoding/gmsoft-tools/blob/master/api.md#getTopRoot)，默认选中元素改为 #mount-root
 - ### 1.2.1  
   2020-3-10     
   - 🌟 新增 [getTopRoot](https://github.com/gmsoft-happyCoding/gmsoft-tools/blob/master/api.md#getTopRoot)，顶层窗口引用挂载节点

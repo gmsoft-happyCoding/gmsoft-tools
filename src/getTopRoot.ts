@@ -3,5 +3,5 @@
  * @returns {HTMLElement}
  */
 export default function getTopRoot() {
-  return (top.document.querySelector('#root-view') as HTMLElement) || top.document.body;
+  return (top.document.querySelector('#mount-root') as HTMLElement) || top.document.body;
 }
