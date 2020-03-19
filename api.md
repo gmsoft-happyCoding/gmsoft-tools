@@ -45,6 +45,8 @@
 <dd><p>传入参数对象，返回search结构的字符串</p></dd>
 <dt><a href="#getSuffix">getSuffix(string)</a> ⇒ <code>string</code> | <code>undefined</code></dt>
 <dd><p>从文件名中提取后缀名</p></dd>
+<dt><a href="#getTopRoot">getTopRoot()</a> ⇒ <code>HTMLElement</code></dt>
+<dd><p>顶层窗口引用挂载节点</p></dd>
 <dt><a href="#getTotalInResHeader">getTotalInResHeader(response, [defaultValue])</a> ⇒ <code>number</code></dt>
 <dd><p>从response headers 中取出x-total-count</p></dd>
 <dt><a href="#getValue">getValue(target, paths, defaultValue?)</a> ⇒ <code>any</code></dt>
@@ -54,6 +56,8 @@
 <dd><p>字符串数字 大于</p></dd>
 <dt><a href="#gte">gte(vala, valb)</a> ⇒ <code>boolean</code></dt>
 <dd><p>字符串数字 大于等于</p></dd>
+<dt><a href="#hash">hash(params)</a> ⇒ <code>string</code></dt>
+<dd><p>传入参数对象，返回类hash字符串</p></dd>
 <dt><a href="#isArray">isArray(testData)</a> ⇒ <code>boolean</code></dt>
 <dd><p>校验 是不是数组，解决 @types/lodash.d 中 重载被弃用</p></dd>
 <dt><a href="#isArrayNumber">isArrayNumber(testArr)</a> ⇒ <code>boolean</code></dt>
@@ -74,6 +78,8 @@
 <dd><p>判定字符串是不是 数字字符串 &#39;1234&#39;</p></dd>
 <dt><a href="#isStrNumEqual">isStrNumEqual(value, other)</a> ⇒ <code>boolean</code></dt>
 <dd><p>判定两值相等</p></dd>
+<dt><a href="#loopCall">loopCall(times, cb)</a> ⇒ <code>void</code></dt>
+<dd><p>循环调用数次，func</p></dd>
 <dt><a href="#lt">lt(vala, valb)</a> ⇒ <code>boolean</code></dt>
 <dd><p>小于</p></dd>
 <dt><a href="#lte">lte(vala, valb)</a> ⇒ <code>boolean</code></dt>
@@ -82,6 +88,8 @@
 <dd><p>moment对象转时间戳</p></dd>
 <dt><a href="#multiply">multiply(multiplier, multiplicand)</a> ⇒ <code>string</code></dt>
 <dd><p>乘法</p></dd>
+<dt><a href="#nullArr">nullArr(len?)</a> ⇒ <code>Array.&lt;Null&gt;</code></dt>
+<dd><p>生成一定长度的，每个子项均为null的数组</p></dd>
 <dt><a href="#onValidateFieldsChange">onValidateFieldsChange(changedFields, changeCB, [noValidate])</a> ⇒ <code>void</code></dt>
 <dd><p>表单变化 当有项目处于验证中时不予通过
 常用于 Form.create() onFieldsChange 时</p></dd>
@@ -108,6 +116,13 @@
 <dd><p>值有效无效（满足条件与否）的处理</p></dd>
 <dt><a href="#validObjValue">validObjValue(obj)</a> ⇒ <code>Object</code></dt>
 <dd><p>清理掉对象值为null或者undefined的属性</p></dd>
+</dl>
+
+## Typedefs
+
+<dl>
+<dt><a href="#callback">callback</a> ⇒ <code>any</code></dt>
+<dd><p>回调函数</p></dd>
 </dl>
 
 <a name="TreeData"></a>
@@ -506,6 +521,12 @@ getSearch({name:null,age:12})// => '?age=12'
 ```js
 currency('helloWorld.svg')// => 'svg'
 ```
+<a name="getTopRoot"></a>
+
+## getTopRoot() ⇒ <code>HTMLElement</code>
+<p>顶层窗口引用挂载节点</p>
+
+**Kind**: global function  
 <a name="getTotalInResHeader"></a>
 
 ## getTotalInResHeader(response, [defaultValue]) ⇒ <code>number</code>
@@ -603,6 +624,33 @@ gte('1.2','1.2')// => true
 **Example**  
 ```js
 gte('1.2','1.3')// => false
+```
+<a name="hash"></a>
+
+## hash(params) ⇒ <code>string</code>
+<p>传入参数对象，返回类hash字符串</p>
+
+**Kind**: global function  
+
+| Param | Type |
+| --- | --- |
+| params | <code>StringObject</code> | 
+
+**Example**  
+```js
+hash()// => 'TPCvZq'
+```
+**Example**  
+```js
+hash({len:3})// => 'fTb'
+```
+**Example**  
+```js
+hash({chars:['A','B','C']})// => 'CBBBBA'
+```
+**Example**  
+```js
+hash({chars:['A','B','C'],len:12})// => 'CABABBABBCBA'
 ```
 <a name="isArray"></a>
 
@@ -843,6 +891,26 @@ isStrNumEqual('1.1','1.10')// => true
 ```js
 isStrNumEqual('1.1','1.11')// => false
 ```
+<a name="loopCall"></a>
+
+## loopCall(times, cb) ⇒ <code>void</code>
+<p>循环调用数次，func</p>
+
+**Kind**: global function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| times | <code>number</code> | <p>循环调用的次数，如果小于1则一次都不会调用</p> |
+| cb | [<code>callback</code>](#callback) | <p>执行调用的回调函数</p> |
+
+**Example**  
+```js
+loopCall(2,(count)=>{console.log(count)})// 1// 2
+```
+**Example**  
+```js
+loopCall(1,(count)=>{console.log(count);return count === 1})// 1
+```
 <a name="lt"></a>
 
 ## lt(vala, valb) ⇒ <code>boolean</code>
@@ -926,6 +994,29 @@ timeStampToDate(moment(),"YYYY-MM-DD hh:mm:ss")// => 1555360961000
 **Example**  
 ```js
 multiply('1.1','1.1')// => '1.21'
+```
+<a name="nullArr"></a>
+
+## nullArr(len?) ⇒ <code>Array.&lt;Null&gt;</code>
+<p>生成一定长度的，每个子项均为null的数组</p>
+
+**Kind**: global function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| len? | <code>number</code> | <p>生成的数组的长度</p> |
+
+**Example**  
+```js
+nullArr()// => []
+```
+**Example**  
+```js
+nullArr(2)// => [null,null]
+```
+**Example**  
+```js
+nullArr(-1)// => []
 ```
 <a name="onValidateFieldsChange"></a>
 
@@ -1144,3 +1235,17 @@ import {toString,isArray,reduce} from lodash;validHandle([1,2,3], [val => redu
 ```js
 validObjValue({name:null,age:12})// => {age:12}
 ```
+<a name="callback"></a>
+
+## callback ⇒ <code>any</code>
+<p>回调函数</p>
+
+**Kind**: global typedef  
+**Returns**: <code>any</code> - <ul>
+<li>若返回 true 则执行 break，不再循环</li>
+</ul>  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| count | <code>number</code> | <p>当前是第几次</p> |
+

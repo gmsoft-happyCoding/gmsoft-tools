@@ -15,6 +15,11 @@
 
 ## 更新日志  
 
+- ### 1.3.0  
+  2020-3-19     
+  - 🌟 新增 [hash](https://github.com/gmsoft-happyCoding/gmsoft-tools/blob/master/api.md#hash)，传入参数对象，返回类hash字符串
+  - 🌟 新增 [loopCall](https://github.com/gmsoft-happyCoding/gmsoft-tools/blob/master/api.md#loopCall)，循环调用数次，func
+  - 🌟 新增 [nullArr](https://github.com/gmsoft-happyCoding/gmsoft-tools/blob/master/api.md#nullArr)，生成一定长度的，每个子项均为null的数组
 - ### 1.2.2  
   2020-3-11     
   - 🐞 修改 [getTopRoot](https://github.com/gmsoft-happyCoding/gmsoft-tools/blob/master/api.md#getTopRoot)，默认选中元素改为 #mount-root
