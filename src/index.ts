@@ -48,9 +48,6 @@ import trimObjValue from './trimObjValue';
 import isEmpty from './isEmpty';
 import validObjValue from './validObjValue';
 import getTopRoot from './getTopRoot';
-import hash from './hash';
-import loopCall from './loopCall';
-import nullArr from './nullArr';
 
 export {
   getValue,
@@ -103,7 +100,4 @@ export {
   isEmpty,
   validObjValue,
   getTopRoot,
-  hash,
-  loopCall,
-  nullArr,
 };

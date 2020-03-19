@@ -15,6 +15,11 @@
 
 ## 更新日志  
 
+- ### 1.5.0  
+  2020-3-19     
+  - 🗑  废弃 <s>hash</s> ，请使用 [_.uniqueId](https://www.html.cn/doc/lodash/#_uniqueidprefix)
+  - 🗑  废弃 <s>loopCall</s> ，请使用 [_.times](https://www.html.cn/doc/lodash/#_timesn-iteratee_identity)
+  - 🗑  废弃 <s>nullArr</s> ，请使用 [_.fill(Array(len),null)](https://www.html.cn/doc/lodash/#_fillarray-value-start0-endarraylength)
 - ### 1.3.0  
   2020-3-19     
   - 🌟 新增 [hash](https://github.com/gmsoft-happyCoding/gmsoft-tools/blob/master/api.md#hash)，传入参数对象，返回类hash字符串
