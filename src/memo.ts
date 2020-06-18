@@ -1,4 +1,4 @@
-import { memoize } from 'lodash';
+import { memoize, MemoizedFunction } from 'lodash';
 import sha1 from 'js-sha1';
 
 /**
@@ -25,6 +25,6 @@ import sha1 from 'js-sha1';
  * // 输出 count=2
  * @returns {Function} - 返回缓存化后的函数
  */
-export default function memo(func) {
+export default function memo<T extends (...args: any) => any>(func: T): T & MemoizedFunction {
   return memoize(func, (...agrs) => sha1(JSON.stringify(agrs)));
 }

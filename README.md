@@ -15,6 +15,9 @@
 
 ## 更新日志  
 
+- ### 1.5.2  
+  2020-6-18     
+  - 🐞 修改 [memo](https://github.com/gmsoft-happyCoding/gmsoft-tools/blob/master/api.md#memo)，添加泛型支持
 - ### 1.5.1  
   2020-6-18     
   - 🌟 新增 [memo](https://github.com/gmsoft-happyCoding/gmsoft-tools/blob/master/api.md#memo)，创建一个会缓存 func 结果的函数
