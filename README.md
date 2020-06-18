@@ -15,6 +15,9 @@
 
 ## 更新日志  
 
+- ### 1.5.1  
+  2020-6-18     
+  - 🌟 新增 [memo](https://github.com/gmsoft-happyCoding/gmsoft-tools/blob/master/api.md#memo)，创建一个会缓存 func 结果的函数
 - ### 1.5.0  
   2020-3-19     
   - 🗑  废弃 <s>hash</s> ，请使用 [_.uniqueId](https://www.html.cn/doc/lodash/#_uniqueidprefix)
