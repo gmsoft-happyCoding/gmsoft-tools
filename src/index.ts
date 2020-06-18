@@ -48,6 +48,7 @@ import trimObjValue from './trimObjValue';
 import isEmpty from './isEmpty';
 import validObjValue from './validObjValue';
 import getTopRoot from './getTopRoot';
+import memo from './memo';
 
 export {
   getValue,
@@ -75,6 +76,7 @@ export {
   momentToTimestamp,
   timeStampToMoment,
   TreeData,
+  memo,
   createFormFields,
   onValidateFieldsChange,
   getPopupContainer,
