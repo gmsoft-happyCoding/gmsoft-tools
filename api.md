@@ -105,7 +105,7 @@
 <dd><p>减法</p></dd>
 <dt><a href="#timeStampFormat">timeStampFormat(timeStamp, [formatType])</a> ⇒ <code>string</code></dt>
 <dd><p>时间戳格式化</p></dd>
-<dt><a href="#timeStampToMoment">timeStampToMoment(timeStamp)</a> ⇒ <code>Monent.Moment</code></dt>
+<dt><a href="#timeStampToMoment">timeStampToMoment(timeStamp)</a> ⇒ <code>moment.Moment</code></dt>
 <dd><p>时间戳转moment对象</p></dd>
 <dt><a href="#trimObjValue">trimObjValue(obj)</a> ⇒ <code>StringObject</code></dt>
 <dd><p>移除对象值为string的前后空格，值不是string不作处理</p></dd>
@@ -931,7 +931,7 @@ let count = 0;const add1 = a => { count++; console.log('count=',count); retu
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
-| momentObj | <code>Monent.Moment</code> |  | <p>待转换的moment对象</p> |
+| momentObj | <code>moment.Moment</code> |  | <p>待转换的moment对象</p> |
 | [formatType] | <code>string</code> | <code>&quot;&#x27;YYYY-MM-DD&#x27;&quot;</code> | <p>format 模板 默认'YYYY-MM-DD'即去掉时分秒精度</p> |
 
 **Example**  
@@ -1114,7 +1114,7 @@ timeStampToDate(1555403211557,"YYYY-MM-DD hh:mm:ss")// => '"2019-04-16 04:26:51
 ```
 <a name="timeStampToMoment"></a>
 
-## timeStampToMoment(timeStamp) ⇒ <code>Monent.Moment</code>
+## timeStampToMoment(timeStamp) ⇒ <code>moment.Moment</code>
 <p>时间戳转moment对象</p>
 
 **Kind**: global function  
