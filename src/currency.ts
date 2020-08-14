@@ -49,7 +49,7 @@ export default function currency(
   }
   const fixedMoney = new Decimal(money).toFixed(float);
   const fixedMoneyVals = fixedMoney.split('.');
-  let formatVal = `.${fixedMoneyVals[1]}`;
+  let formatVal = fixedMoneyVals[1] ? `.${fixedMoneyVals[1]}` : '';
   const len = fixedMoneyVals[0].length;
   let index = len - 1;
   let modIx = 1;
