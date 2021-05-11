@@ -19,7 +19,7 @@
     "dva": "^2.4.1",
     "history": "^4.7.2",
     "gmsoft-tools": "link:../",
-    "immer": "1.8.0",
+    "immer": "8.0.1",
     "moment": "2.22.2",
     "ramda": "^0.26.1",
     "react-app-polyfill": "^0.1.3",
