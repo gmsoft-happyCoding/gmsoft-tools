@@ -49,6 +49,7 @@ import isEmpty from './isEmpty';
 import validObjValue from './validObjValue';
 import getTopRoot from './getTopRoot';
 import memo from './memo';
+import getSimilarity from './getSimilarity';
 
 export {
   getValue,
@@ -102,4 +103,5 @@ export {
   isEmpty,
   validObjValue,
   getTopRoot,
+  getSimilarity,
 };
