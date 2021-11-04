@@ -43,8 +43,8 @@
 <dd><p>Select 等Antd组件getPopupContainer 公用方法</p></dd>
 <dt><a href="#getSearch">getSearch(params)</a> ⇒ <code>string</code></dt>
 <dd><p>传入参数对象，返回search结构的字符串</p></dd>
-<dt><a href="#getSimilarity">getSimilarity()</a> ⇒</dt>
-<dd><p>计算两字符串相似度</p></dd>
+<dt><a href="#getSimilarity">getSimilarity(str1, str2)</a> ⇒ <code>number</code></dt>
+<dd><p>计算两字符串相似度，返回 0 - 1 之前的小数，数值越大相似度越高</p></dd>
 <dt><a href="#getSuffix">getSuffix(string)</a> ⇒ <code>string</code> | <code>undefined</code></dt>
 <dd><p>从文件名中提取后缀名</p></dd>
 <dt><a href="#getTopRoot">getTopRoot()</a> ⇒ <code>HTMLElement</code></dt>
@@ -500,11 +500,20 @@ getSearch({name:null,age:12})// => '?age=12'
 ```
 <a name="getSimilarity"></a>
 
-## getSimilarity() ⇒
-<p>计算两字符串相似度</p>
+## getSimilarity(str1, str2) ⇒ <code>number</code>
+<p>计算两字符串相似度，返回 0 - 1 之前的小数，数值越大相似度越高</p>
 
 **Kind**: global function  
-**Returns**: <p>返回 0 - 1 之前的小数，数值越大相似度越高</p>  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| str1 | <code>string</code> | <p>str1</p> |
+| str2 | <code>string</code> | <p>str2</p> |
+
+**Example**  
+```js
+getSimilarity('1111','1122')// => 0.5
+```
 <a name="getSuffix"></a>
 
 ## getSuffix(string) ⇒ <code>string</code> \| <code>undefined</code>

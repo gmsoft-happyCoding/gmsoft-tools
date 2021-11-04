@@ -38,8 +38,11 @@ function levenshteinDistance(str1: string, str2: string) {
 /**
  * @description 计算两字符串相似度，返回 0 - 1 之前的小数，数值越大相似度越高
  * @function
- * @param 目标字符串A
- * @param 目标字符串B
+ * @param {string} str1 - str1
+ * @param {string} str2 - str2
+ * @example
+ * getSimilarity('1111','1122')
+ * // => 0.5
  * @returns {number}
  */
 export default function getSimilarity(str1: string, str2: string): number {
