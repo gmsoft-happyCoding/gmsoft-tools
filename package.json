@@ -20,7 +20,8 @@
     "build:md": "rimraf ./api.md && node scripts/doc2md.js",
     "pub": "npm publish --access public",
     "start": "rollup -c -w",
-    "test": "jest -c"
+    "test": "jest -c='./jest.config.js'",
+    "test-watch": "jest -c='./jest.config.js' --watch"
   },
   "dependencies": {
     "decimal.js-light": "^2.5.0",
