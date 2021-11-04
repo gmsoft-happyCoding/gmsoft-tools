@@ -10,8 +10,10 @@ import pkg from './package.json';
 var filePath = 'src';
 var inputFiles = [];
 //根据文件路径读取文件，返回文件列表
-fs.readdirSync(filePath).forEach(function(filename) {
-  if (filename.endsWith('.ts') || filename.endsWith('.js')) {
+fs.readdirSync(filePath).forEach(function (filename) {
+  const includePattern = /\.(t|j)s$/;
+  const excludePattern = /\.test\.(t|j)s$/;
+  if (filename.match(includePattern) && !filename.match(excludePattern)) {
     inputFiles.push(filePath + '/' + filename);
   }
 });

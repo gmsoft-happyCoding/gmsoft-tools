@@ -2,7 +2,7 @@
   "source": {
     "include": ["es"],
     "includePattern": ".+\\.js(x)?$",
-    "excludePattern": ".+\\.d.ts"
+    "excludePattern": ".+\\.(d|test).ts"
   },
   "plugins": ["plugins/markdown"]
 }

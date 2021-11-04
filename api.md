@@ -43,6 +43,8 @@
 <dd><p>Select 等Antd组件getPopupContainer 公用方法</p></dd>
 <dt><a href="#getSearch">getSearch(params)</a> ⇒ <code>string</code></dt>
 <dd><p>传入参数对象，返回search结构的字符串</p></dd>
+<dt><a href="#getSimilarity">getSimilarity()</a> ⇒</dt>
+<dd><p>计算两字符串相似度</p></dd>
 <dt><a href="#getSuffix">getSuffix(string)</a> ⇒ <code>string</code> | <code>undefined</code></dt>
 <dd><p>从文件名中提取后缀名</p></dd>
 <dt><a href="#getTopRoot">getTopRoot()</a> ⇒ <code>HTMLElement</code></dt>
@@ -94,7 +96,7 @@
 <dd><p>pageNo转索引值</p></dd>
 <dt><a href="#parseJSON">parseJSON(json, defaultValue?)</a> ⇒ <code>any</code></dt>
 <dd><p>安全解析JSON</p></dd>
-<dt><a href="#parseJSONArr">parseJSONArr(jsonArr, [defaultValue])</a> ⇒ <code>Array.&lt;any&gt;</code></dt>
+<dt><a href="#parseJSONArr">parseJSONArr(jsonArr, [defaultValue])</a> ⇒ <code>[ &#x27;Array&#x27; ].&lt;any&gt;</code></dt>
 <dd><p>安全解析 JSON数组
 如果解析结果不是数组则视为无效，返回defaultValue||[]</p></dd>
 <dt><a href="#parseSearch">parseSearch(searchStr)</a> ⇒ <code>StringObject</code></dt>
@@ -496,6 +498,13 @@ getSearch({name:'kangkang',age:12})// => '?name=kangkang&age=12'
 ```js
 getSearch({name:null,age:12})// => '?age=12'
 ```
+<a name="getSimilarity"></a>
+
+## getSimilarity() ⇒
+<p>计算两字符串相似度</p>
+
+**Kind**: global function  
+**Returns**: <p>返回 0 - 1 之前的小数，数值越大相似度越高</p>  
 <a name="getSuffix"></a>
 
 ## getSuffix(string) ⇒ <code>string</code> \| <code>undefined</code>
@@ -1013,7 +1022,7 @@ pageNoToOffset(16,10)// => '150'
 
 <a name="parseJSONArr"></a>
 
-## parseJSONArr(jsonArr, [defaultValue]) ⇒ <code>Array.&lt;any&gt;</code>
+## parseJSONArr(jsonArr, [defaultValue]) ⇒ <code>[ &#x27;Array&#x27; ].&lt;any&gt;</code>
 <p>安全解析 JSON数组
 如果解析结果不是数组则视为无效，返回defaultValue||[]</p>
 
@@ -1023,7 +1032,7 @@ pageNoToOffset(16,10)// => '150'
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
 | jsonArr | <code>string</code> |  | <p>待解析的JSON数组</p> |
-| [defaultValue] | <code>Array.&lt;any&gt;</code> | <code>[]</code> | <p>解析失败的默认值</p> |
+| [defaultValue] | <code>[ &#x27;Array&#x27; ].&lt;any&gt;</code> | <code>[]</code> | <p>解析失败的默认值</p> |
 
 **Example**  
 ```js
@@ -1065,7 +1074,7 @@ parseSearch('?name=kangkang&age=12')// => {name: "kangkang", age: "12"}
 
 | Param | Type | Description |
 | --- | --- | --- |
-| strMap | <code>Map.&lt;string, any&gt;</code> | <p>key string 的 Map</p> |
+| strMap | <code>[ &#x27;Map&#x27; ].&lt;string, any&gt;</code> | <p>key string 的 Map</p> |
 
 **Example**  
 ```js

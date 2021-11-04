@@ -20,5 +20,14 @@
     "noUnusedParameters": true
   },
   "include": ["src/**/*"],
-  "exclude": ["node_modules", "build", "es", "lib", "scripts", "example", "rollup.config.js"]
+  "exclude": [
+    "node_modules",
+    "build",
+    "es",
+    "lib",
+    "scripts",
+    "example",
+    "rollup.config.js",
+    "src/**/*.test.ts"
+  ]
 }
