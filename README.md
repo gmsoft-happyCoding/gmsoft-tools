@@ -17,7 +17,7 @@
 
 ## 更新日志
 
-- ### 1.5.4
+- ### 1.6.0
   2021-11-04
   - 🌟 新增 [getSimilarity](https://github.com/gmsoft-happyCoding/gmsoft-tools/blob/master/api.md#getSimilarity)，传入两字符串，计算其相似度
 - ### 1.5.3
