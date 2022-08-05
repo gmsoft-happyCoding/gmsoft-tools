@@ -19,17 +19,13 @@ export default function downloadFileByApi(
   downloadGateWay: string,
   business?: string
 ): void {
-  let fileName = name;
-  if (baseIsIE()) {
-    fileName = encodeURIComponent(name);
-  }
-  const elemIF = top.window.document.createElement('iframe');
+  const elemIF = top!.window.document.createElement('iframe');
 
   elemIF.src = `${downloadGateWay}/files${getSearch({
     filePath: path,
-    fileName: fileName,
+    fileName: encodeURIComponent(name),
     business: business,
   })}`;
   elemIF.style.display = 'none';
-  top.window.document.body.appendChild(elemIF);
+  top!.window.document.body.appendChild(elemIF);
 }
