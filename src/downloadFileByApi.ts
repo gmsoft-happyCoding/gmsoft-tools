@@ -1,4 +1,3 @@
-import baseIsIE from './internal/baseIsIE';
 import getSearch from './getSearch';
 
 /**
