@@ -11,7 +11,7 @@
  * @returns {boolean}
  */
 const isStrNum = (testStr: string) => {
-  const reg = /^[0-9]+.?[0-9]*$/;
+  const reg = /^-?([1-9]\d*\.\d*|0\.\d*[1-9]\d*|0?\.0+|0)$/;
   if (reg.test(testStr)) {
     return true;
   }
