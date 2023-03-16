@@ -101,6 +101,8 @@
 如果解析结果不是数组则视为无效，返回defaultValue||[]</p></dd>
 <dt><a href="#parseSearch">parseSearch(searchStr)</a> ⇒ <code>StringObject</code></dt>
 <dd><p>解析 search</p></dd>
+<dt><a href="#printElement">printElement(element, [style])</a> ⇒ <code>undefined</code></dt>
+<dd><p>打印页面元素(局部打印)</p></dd>
 <dt><a href="#strMapToObj">strMapToObj(strMap)</a> ⇒ <code>object</code></dt>
 <dd><p>Map 转 Object</p></dd>
 <dt><a href="#subtract">subtract(minuend, subtrahend)</a> ⇒ <code>string</code></dt>
@@ -1073,6 +1075,26 @@ parseSearch('')// => {}
 **Example**  
 ```js
 parseSearch('?name=kangkang&age=12')// => {name: "kangkang", age: "12"}
+```
+<a name="printElement"></a>
+
+## printElement(element, [style]) ⇒ <code>undefined</code>
+<p>打印页面元素(局部打印)</p>
+
+**Kind**: global function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| element | <code>HTMLElement</code> \| <code>string</code> | <p>待打印元素</p> |
+| [style] | <code>string</code> | <p>添加到打印页面的样式</p> |
+
+**Example**  
+```js
+printElement('#print-element');
+```
+**Example**  
+```js
+printElement('#print-element', `@page{margin: 10mm}`);
 ```
 <a name="strMapToObj"></a>
 

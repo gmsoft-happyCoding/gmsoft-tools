@@ -17,6 +17,10 @@
 
 ## 更新日志
 
+- ### 1.7.0
+  2023-03-16
+  - 🌟 新增 [printElement](https://github.com/gmsoft-happyCoding/gmsoft-tools/blob/master/api.md#printElement)，打印页面元素(局部打印)
+
 - ### 1.6.0
   2021-11-04
   - 🌟 新增 [getSimilarity](https://github.com/gmsoft-happyCoding/gmsoft-tools/blob/master/api.md#getSimilarity)，传入两字符串，计算其相似度

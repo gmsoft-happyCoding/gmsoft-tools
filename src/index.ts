@@ -50,6 +50,7 @@ import validObjValue from './validObjValue';
 import getTopRoot from './getTopRoot';
 import memo from './memo';
 import getSimilarity from './getSimilarity';
+import printElement from './printElement';
 
 export {
   getValue,
@@ -104,4 +105,5 @@ export {
   validObjValue,
   getTopRoot,
   getSimilarity,
+  printElement,
 };
