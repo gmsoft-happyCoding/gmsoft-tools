@@ -6306,8 +6306,11 @@ globby@^9.2.0:
     slash "^2.0.0"
 
 "gmsoft-tools@link:..":
-  version "0.0.0"
-  uid ""
+  version "1.7.0"
+  dependencies:
+    decimal.js-light "^2.5.0"
+    js-sha1 "^0.6.0"
+    ua-parser-js "^0.7.19"
 
 good-listener@^1.2.2:
   version "1.2.2"
@@ -10717,7 +10720,6 @@ react-dom@^16.7.0:
 
 "react-dom@link:../node_modules/react-dom":
   version "0.0.0"
-  uid ""
 
 react-error-overlay@^5.1.0, react-error-overlay@^5.1.4:
   version "5.1.4"
@@ -10909,7 +10911,6 @@ react@^16.7.0:
 
 "react@link:../node_modules/react":
   version "0.0.0"
-  uid ""
 
 read-cmd-shim@^1.0.1:
   version "1.0.1"
@@ -11598,14 +11599,6 @@ saxes@^3.1.5:
 scan-directory@^1.0.0:
   version "1.0.0"
   resolved "http://registry.npm.taobao.org/scan-directory/download/scan-directory-1.0.0.tgz#46b6769dbd893d9bd7490ae9dcc43811a38b7fbb"
-
-scheduler@^0.16.2:
-  version "0.16.2"
-  resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.16.2.tgz#f74cd9d33eff6fc554edfb79864868e4819132c1"
-  integrity sha512-BqYVWqwz6s1wZMhjFvLfVR5WXP7ZY32M/wYPo04CcuPM7XZEbV2TBNW7Z0UkguPTl0dWMA59VbNXxK6q+pHItg==
-  dependencies:
-    loose-envify "^1.1.0"
-    object-assign "^4.1.1"
 
 scheduler@^0.17.0:
   version "0.17.0"
@@ -12325,7 +12318,6 @@ style-loader@0.23.0:
 
 "styled-components@link:../node_modules/styled-components":
   version "0.0.0"
-  uid ""
 
 stylehacks@^4.0.0:
   version "4.0.3"
@@ -12753,13 +12745,10 @@ typescript@<3.4.0:
   version "3.3.4000"
   resolved "http://registry.npm.taobao.org/typescript/download/typescript-3.3.4000.tgz#76b0f89cfdbf97827e1112d64f283f1151d6adf0"
 
-ua-parser-js@^0.7.18:
-  version "0.7.19"
-  resolved "http://registry.npm.taobao.org/ua-parser-js/download/ua-parser-js-0.7.19.tgz#94151be4c0a7fb1d001af7022fdaca4642659e4b"
-
-ua-parser-js@^0.7.19:
-  version "0.7.20"
-  resolved "http://192.168.2.11:4873/ua-parser-js/-/ua-parser-js-0.7.20.tgz#7527178b82f6a62a0f243d1f94fd30e3e3c21098"
+ua-parser-js@^0.7.18, ua-parser-js@^0.7.19:
+  version "0.7.34"
+  resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-0.7.34.tgz#afb439e2e3e394bdc90080acb661a39c685b67d7"
+  integrity sha512-cJMeh/eOILyGu0ejgTKB95yKT3zOenSe9UGE3vj6WfiOwgGYnmATUsnDixMFvdU+rNMvWih83hrUP8VwhF9yXQ==
 
 uglify-es@^3.3.4:
   version "3.3.9"
